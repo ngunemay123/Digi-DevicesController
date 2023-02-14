@@ -141,11 +141,6 @@ function Hour_nose()
     }
 }
 function checkValidate() {
-    var decor = document.getElementById("txtNote").style;
-    decor.marginLeft = "100px"
-
-
-
     var emailID = document.getElementById("txtEmail").value;
         atpos = emailID.indexOf("@");
          dotpos = emailID.lastIndexOf(".");
