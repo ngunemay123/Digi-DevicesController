@@ -1,0 +1,80 @@
+/* .devices-section{
+    margin: auto;
+}
+
+.devices-section h2{
+    text-align: center;
+    color: rgb(176, 0, 32);
+    margin-bottom: 120px;
+}
+
+.devices-section .container{
+    justify-content: center;
+}
+
+.devices-section img{
+    height: 250px;
+    width: 400px;
+    border: solid rgb(255, 229, 229) 2px;
+    border-radius: 25px;
+    display: inline;
+}
+
+.devices-section .container{
+    justify-content: center;
+}
+
+.devices-section p{
+    margin-top: 10px;
+}
+
+.devices-section img{
+    margin-bottom: 30px;
+} */
+
+.dataDivices-section h2{
+    text-align: center;
+    color: rgb(176, 0, 32);
+    margin-bottom: 80px;
+}
+
+.scroltable-wrapper{position:relative}.scroltable-container{overflow:auto}.scroltable-nav{display:none;position:absolute;width:60px;height:100%;cursor:pointer}.scroltable-nav.scroltable-nav-left{left:0;background:url(images/arrow-left.png) no-repeat 10px center,-webkit-linear-gradient(180deg,rgba(255,255,255,0),#fff);background:url(images/arrow-left.png) no-repeat 10px center,-moz-linear-gradient(to left,rgba(255,255,255,0),#fff);background:url(images/arrow-left.png) no-repeat 10px center,-ms-linear-gradient(to left,rgba(255,255,255,0),#fff);background:url(images/arrow-left.png) no-repeat 10px center,-o-linear-gradient(to left,rgba(255,255,255,0),#fff);background:url(images/arrow-left.png) no-repeat 10px center,linear-gradient(to left,rgba(255,255,255,0),#fff)}.scroltable-nav.scroltable-nav-right{right:0;background:url(images/arrow-right.png) no-repeat right 10px center,-webkit-linear-gradient(0,rgba(255,255,255,0),#fff);background:url(/images/arrow-right.png) no-repeat right 10px center,-moz-linear-gradient(to right,rgba(255,255,255,0),#fff);background:url(images/arrow-right.png) no-repeat right 10px center,-ms-linear-gradient(to right,rgba(255,255,255,0),#fff);background:url(/images/arrow-right.png) no-repeat right 10px center,-o-linear-gradient(to right,rgba(255,255,255,0),#fff);background:url(images/arrow-right.png) no-repeat right 10px center,linear-gradient(to right,rgba(255,255,255,0),#fff)}
+
+.header img{
+    height: auto;
+    width: auto;
+    border: solid rgb(253, 253, 253) 2px;
+    border-radius: 25px;
+    display: inline;
+}
+
+.tableData h2{
+    text-align: center;
+    color: rgb(176, 0, 32);
+    margin-bottom: 80px;
+}
+
+.tableData tr>td{
+    width: 150px;
+    height: 20px;
+    text-align: center;
+}
+
+.tableData table .titleTable{
+    background-color: #f0f0f0;
+}
+
+.tableData .tableAnalys{
+    overflow: scroll;
+    width: 100%;
+}
+
+.collapse{
+    font-size: 18px;
+    font-style: italic;
+    color: rgb(116, 116, 116);
+}
+
+.collapse tbody>td{
+    color: black;
+}

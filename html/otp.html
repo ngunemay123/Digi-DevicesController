@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/otp.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/dist/css/bootstrap.min.css" />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/headers/"
+    />
+    <script src="../js/SignIn/signUp.js"></script>
+    <script src="../js/SignIn/otp.js"></script>
+    <title>Document</title>
+  </head>
+  <body class="otp">
+    <div class="container">
+      <h1>ENTER OTP</h1>
+      <div class="userInput">
+        <input
+          type="text"
+          id="ist"
+          maxlength="1"
+          onkeyup="clickEvent(this,'sec')"
+        />
+        <input
+          type="text"
+          id="sec"
+          maxlength="1"
+          onkeyup="clickEvent(this,'third')"
+        />
+        <input
+          type="text"
+          id="third"
+          maxlength="1"
+          onkeyup="clickEvent(this,'fourth')"
+          class="space"
+        />
+        <input
+          type="text"
+          id="fourth"
+          maxlength="1"
+          onkeyup="clickEvent(this,'fifth')"
+        />
+        <input
+          type="text"
+          id="fifth"
+          maxlength="1"
+          onkeyup="clickEvent(this,'sixth')"
+        />
+        <input
+          type="text"
+          id="sixth"
+          maxlength="1"
+          onkeyup="clickEvent(this,'sixth')"
+        />
+        <button><i class="fa-solid fa-angle-right"></i></button>
+      </div>
+      <!-- <div class="btn-submit">
+        <button>CONFIRM</button>
+      </div> -->
+    </div>
+  </body>
+</html>

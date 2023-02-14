@@ -1,0 +1,182 @@
+.body-signUp{
+    background-image: linear-gradient(rgba(175, 37, 63,0.100),rgba(207, 155, 165,0.85)), url("../img/japan_street.jpg");
+    height: 75vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* width: 100%;
+    height: 100%;
+    background-color: rgb(238, 238, 238); */
+}
+
+.signUp-title h2{
+    /* color: rgb(228, 80, 107); */
+    color: rgb(31, 31, 31);
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 5px;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.signUp-title .col{
+    display: flex;
+    justify-content: center;
+}
+
+.signUp-title table{
+    height: auto;
+    width: 600px;
+}
+
+.signUp-title table td,tr{
+    padding: 5px;
+}
+
+.signUp-title .title{
+    width: 190px;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.signUp-title form tr>td.tittle-option{
+    width: 190px;
+    text-align: right;
+    padding-right: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.signUp-title form tr>td.select-option>select{
+    width: 263px;
+    border-radius: 20px;
+    border: solid 1px rgb(196, 81, 102);
+    font-size: 22px;
+    outline: none;
+}
+
+.signUp-title form tr>td.select-option>select{
+    padding: 0px 5px;
+}
+ 
+.signUp-title form{
+    background: rgba(211, 211, 211, 0.5);
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 100px;
+    /* justify-items: center; */
+    /* margin-top: 20px;
+    margin: 50px; */
+}
+
+.signUp-title .input{
+    padding-left: 12px;
+    border-radius: 20px;
+    border: solid 1px rgb(196, 81, 102);
+    font-size: 22px;
+    outline: none;
+}
+
+.signUp-title img{
+    height: 420px;
+    width: 410px;
+    transform: rotate(-40deg);
+    margin-bottom: 50px;
+}
+
+.signUp-title .img-siup{
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.signUp-title .container{
+    /* margin-top: 120px; */
+}
+
+.signUp-title form input.btn-signUp{
+    width: 70%;
+    border-radius: 20px;
+    background-color: rgb(167, 48, 69);
+    margin-top: 20px;
+    border: none;
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+.signUp-title button:hover{
+    transform: scale(1.1);
+}
+
+.signUp-title form>table .captcha{
+    padding-right: 80px;
+}
+
+.signUp-title form>table .captcha .preview{
+    width: 240px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    letter-spacing: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    user-select: none;
+    font-size: 30px;
+    /* border-radius: 20px; */
+    /* border: solid rgb(167, 48, 69) 1px; */
+}
+
+.signUp-title form .captcha .preview span{
+    display:  inline-block;
+    user-select: none;
+}
+
+.signUp-title form .captcha .captcha-form{
+    display: flex;
+}
+.signUp-title form .captcha #captcha-form{
+    letter-spacing: 5px;
+}
+
+.signUp-title form .captcha .captcha-form input{
+    width: 260px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 12px;
+    margin-right: 2px;
+    border: solid 1px rgb(196, 81, 102);
+    outline: none;
+}
+
+.signUp-title form .captcha .captcha-form .captcha-refresh{
+    width: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border: solid 1px rgb(196, 81, 102);
+    color: rgb(167, 48, 69);
+    border-radius: 50px;
+    margin-left: -42px;
+    background-color: rgb(255, 255, 255);
+    font-size: 22px;
+}
+
+.signUp-title .messegeErr #txtNote{
+    justify-content: center;
+}
+
+.signUp-title form .btn-siup{
+    display: flex;
+    justify-content: center;
+}
+
+.signUp-title form .btn-siup:hover{
+    transform: scale(1.1);
+}
+

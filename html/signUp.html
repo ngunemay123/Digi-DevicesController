@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/signUp.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/otp.css">
+        <link rel="stylesheet" href="../js/server.js">
+        <link rel="stylesheet" href="../js/captcha.js">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" >
+        <link rel="stylesheet" href="../assets/dist/css/bootstrap.min.css">
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+        <title>Website Demo</title>
+        <script src="../js/captcha.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="../js/SignIn/signUp.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("_5v3301hRA5j4LmV8");
+   })();
+</script>
+    </head>
+
+    <form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());"></form>
+    
+    <body class="body-login body-signUp" style="background-color: rgb(238, 238, 238);" onload="generate()">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+            
+            /* The message box is shown when the user clicks on the password field */
+            #message {
+              display:none;
+              background: transparent;
+              color: #000;
+              position: relative;
+              padding: 4cm;
+              margin-top: 10px;
+            }
+            #cuong {
+              display:block;
+            }
+            
+            #cuong1 {
+              display:none;
+            }
+
+            #message p {
+              padding: 10px 14px;
+              font-size: 14px;
+            }
+
+            /* Add a green text color and a checkmark when the requirements are right */
+            .valid {
+              color: rgb(0, 165, 0);
+            }
+
+            .valid:before {
+              position: relative;
+              left: -35px;
+              content: "✔";
+            }
+
+            /* Add a red text color and an "x" when the requirements are wrong */
+            .invalid {
+              color: rgb(176, 0, 32);
+            }
+
+            .invalid:before {
+              position: relative;
+              left: -35px;
+              content: "✖";
+            }
+        </style>
+
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <header class="p-3 mb-3 border-bottom">
+          <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="../html/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <h2>DIGI</h2>
+              </a>
+      
+              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
+
+              </ul>
+      
+              <div class="text-end">
+                  <a href="../index.html "><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+                  <a href="../html/signUp.html "><button type="button" class="btn btn-light">Sign-up</button></a>           
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div id="cuong" class="signUp-title">
+            <h2>Sign up</h2>
+            <div class="container">
+                <div class="row">
+                  <!-- <div class="col img-siup">
+                    <img src="../img/signUp.png" alt="Login photo">
+                </div> -->
+                    <div class="col lf-form">
+                        <form name="form1">
+                            <table>
+                                <tr>
+                                    <td class="title"  id="email">Email</td>
+                                    <td><input class="input" type="email" id="txtEmail" placeholder="Info@gmail.com" required></td>
+                                </tr>
+                                <tr>
+                                    <td class="tittle-option" id="country" >Country</td>
+                                    <td class="select-option" >
+                                        <select id="optNation">
+                                            <option>Vietnam</option>
+                                            <option>Singapore</option>
+                                            <option>Korea</option>
+                                            <option>Hong Kong</option>
+                                            <option>Thailand</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tittle-option"  id="language" >Language</td>
+                                    <td class="select-option" >
+                                        <select id="optLanguage" class="opt-langluage">
+                                           <option><a href="#" language='vietnamese' class="vi"></a>Vietnammes</option>
+                                           <option> <a href="#" language='English' class="en"></a>English</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td class="btn-group">
+                                    <form action="/action_page.php" class="btn-radio-group" style="width: 200px;">
+                                      <div id="radio-btn-group">
+                                        <input type="radio" id="main-account" name="acc" value="1" style="width: 15px; height: auto;" checked>
+                                        <label for="age1" style="font-size: 18px;margin: 3px;">Main account</label> 
+                                      </div>
+                                      <div id="radio-btn-group">
+                                        <input type="radio" id="second-account" name="acc" value="2" style="width: 15px; height: auto; margin-left: 5px;">
+                                        <label for="age1" style="font-size: 18px;margin: 3px;">Extra account</label>
+                                      </div>
+                                    </form>
+                                  </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="title"  id="password" >Password</td>
+                                    <td><input class="input" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,} " 
+                                      id="txtPassword" required></td>
+                                </tr>
+                                  <td></td>
+                                  <td>
+                                      <div id="message">
+                                          <p>Password must contain the following:</p>
+                                          <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                                          <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                          <p id="number" class="invalid">A <b>number</b></p>
+                                          <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                                        </div>
+                                  </td>
+                                    
+                                <tr>
+                                    <td class="title"  id="confirm" style="width: 390px;">Confirm password</td>
+                                    <td><input class="input" type="password"  id="txtConfirmPassword" required></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <div class="captcha">
+                                            <label for="" class="captcha-input">
+                                                <div class="preview" id="CaptchaEnter"></div>
+                                                <div class="captcha-form">
+                                                    <input type="text" id="captcha-form">
+                                                    <button type="button"  class="captcha-refresh" onclick="generate()">
+                                                        <i class="fa fa-refresh"></i>
+                                                    </button>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="messegeErr">
+                              <p id="txtNote"></p>
+                             </div>
+
+                             <div class="btn-siup">
+                               <!-- <a href="#"><button type="button" onclick="btnSignup_Click()" >Sign up</button></a> -->
+                              <input class="btn-signUp" type="button" value="Sign up" onclick="printmsg()" /> 
+                             </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="cuong1" class="container">
+          <h1>ENTER OTP</h1>
+          <div class="userInput">
+            <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+            <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+            <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')" class="space" >
+            <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+            <input type="text" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')">
+            <input type= "text" id="sixth" maxlength="1" onkeyup="clickEvent(this,'sixth')">
+          </div>
+        </div>
+
+        <script>
+          var myInput = document.getElementById("txtPassword");
+          var letter = document.getElementById("letter");
+          var capital = document.getElementById("capital");
+          var number = document.getElementById("number");
+          var length = document.getElementById("length");
+          
+          // When the user clicks on the password field, show the message box
+          myInput.onfocus = function() {
+            document.getElementById("message").style.display = "block";
+            // document.getElementById("message").style.backgroundColor = "rgb(238, 238, 238)";
+            document.getElementById("message").style.padding ="0px";
+
+            document.getElementById("letter").style.fontSize = "16px";
+            document.getElementById("letter").style.letterSpacing = "2px";
+            document.getElementById("letter").style.fontFamily = "Courier New', Courier, monospace";
+
+            document.getElementById("capital").style.fontSize = "16px";
+            document.getElementById("capital").style.letterSpacing = "2px";
+            document.getElementById("capital").style.fontFamily = "Courier New', Courier, monospace";
+
+            document.getElementById("number").style.fontSize = "16px";
+            document.getElementById("number").style.letterSpacing = "2px";
+            document.getElementById("number").style.fontFamily = "Courier New', Courier, monospace";
+
+            document.getElementById("length").style.fontSize = "16px";
+            document.getElementById("length").style.letterSpacing = "2px";
+            document.getElementById("length").style.fontFamily = "Courier New', Courier, monospace";
+          }
+          
+          // When the user clicks outside of the password field, hide the message box
+          myInput.onblur = function() {
+            document.getElementById("message").style.display = "none";
+          }
+          
+          // When the user starts to type something inside the password field
+          myInput.onkeyup = function() {
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/g;
+            if(myInput.value.match(lowerCaseLetters)) {  
+              letter.classList.remove("invalid");
+              letter.classList.add("valid");
+
+            } else {
+              letter.classList.remove("valid");
+              letter.classList.add("invalid");
+            }
+            
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/g;
+            if(myInput.value.match(upperCaseLetters)) {  
+              capital.classList.remove("invalid");
+              capital.classList.add("valid");
+            } else {
+              capital.classList.remove("valid");
+              capital.classList.add("invalid");
+            }
+          
+            // Validate numbers
+            var numbers = /[0-9]/g;
+            if(myInput.value.match(numbers)) {  
+              number.classList.remove("invalid");
+              number.classList.add("valid");
+            } else {
+              number.classList.remove("valid");
+              number.classList.add("invalid");
+            }
+            
+            // Validate length
+            if(myInput.value.length >= 8) {
+              length.classList.remove("invalid");
+              length.classList.add("valid");
+            } else {
+              length.classList.remove("valid");
+              length.classList.add("invalid");
+            }
+          }
+          </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+.devices-section{
+    margin: auto;
+}
+
+.devices-section h2{
+    text-align: center;
+    color: rgb(176, 0, 32);
+    margin-bottom: 120px;
+}
+
+.devices-section .container{
+    justify-content: center;
+}
+
+.devices-section img{
+    height: 250px;
+    width: 400px;
+    border: solid rgb(255, 229, 229) 2px;
+    border-radius: 25px;
+    display: inline;
+}
+
+.devices-section .container{
+    justify-content: center;
+}
+
+.devices-section p{
+    margin-top: 10px;
+}
+
+.devices-section img{
+    margin-bottom: 30px;
+}
+
+.dataDivices-section{
+    background-color: rgb(247, 247, 247);
+}
+
+.dataDivices-section h2{
+    text-align: center;
+    color: rgb(176, 0, 32);
+    margin-bottom: 120px;
+}

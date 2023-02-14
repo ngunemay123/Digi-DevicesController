@@ -1,0 +1,113 @@
+.body-login{
+    background-image: linear-gradient(rgba(175, 37, 63,0.100),rgba(207, 155, 165,0.85)), url("../img/tokio.jpg");
+    height: 75vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.login-title .from-login{
+    
+}
+
+/* .login-title{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(238, 238, 238);
+} */
+
+.login-title h2{
+    color: rgb(31, 31, 31);
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 5px;
+    font-style: italic;
+}
+
+/* .body-login .container{
+    justify-content: center;
+} */
+
+.login-title .from-login {
+    display: flex;
+    justify-content: center;
+}
+
+.login-title table{
+     /* margin-top: 30%; */
+    /* margin-left: 10%;  */
+    /* border: solid black 2px; */
+    height: 140px;
+    width: 380px;
+}
+
+.login-title form{
+    width: fit-content;
+    background: rgba(211, 211, 211, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    /* border: solid black 2px; */
+    justify-items: center;
+    /* margin: 50px; */
+}
+
+.login-title .input{
+    float: right;
+    padding-left: 12px;
+    border-radius: 20px;
+    border: none;
+    border: solid 1px rgb(196, 81, 102);
+    font-size: 22px;
+    outline: none;
+}
+
+.login-title .title{
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* .login-title img{
+    height: auto;
+    width: 480px;
+    float: right;
+    margin-right: 30%;
+} */
+
+.login-title .container{
+    margin-top: 120px;
+}
+
+.login-title button{
+    width: 340px;
+    border-radius: 20px;
+    background-color: rgb(167, 48, 69);
+    /* margin-top: 20px; */
+    border: none;
+    color: white;
+}
+
+.login-title .btn-login{
+    display: flex;
+    justify-content: center;
+}
+
+.login-title button:hover{
+    transform: scale(1.1);
+}
+
+.login-title a p{
+    color: rgb(63, 114, 226);
+    float: right;
+    margin-right: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.login-title a p:hover{
+    color: rgb(219, 88, 88);
+}
+
+.login-title a{
+    text-decoration: none;
+}

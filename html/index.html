@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="../js/server.js">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" >
+        <link rel="stylesheet" href="../assets/dist/css/bootstrap.min.css">
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+        <title>Website Demo</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="../js/SignIn/main.js"></script>
+    </head>
+
+    <body class="body-login" style="background-color: rgb(238, 238, 238);">
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <header class="p-3 mb-3 border-bottom">
+          <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <h2>DIGI</h2>
+              </a>
+      
+              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
+
+              </ul>
+      
+              <div class="text-end">
+                  <a href="../index.html "><button type="button" class="btn btn-primary me-2">Login</button></a>
+                  <a href="../html/signUp.html "><button type="button" class="btn btn-outline-primary">Sign-up</button></a>           
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="login-title">
+            <h2>Login</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col from-login">
+                        <form>
+                            <table >
+                                <tr style="padding: 10px;">
+                                    <td class="title">Email</td>
+                                    <td><input class="input" id="txtSignInEmail" type="email" placeholder=""></td>
+                                </tr>
+                                <tr style="padding:10px;">
+                                    <td class="title">Password</td>
+                                    <td><input id="txtSignInPassword" class="input" type="password"></td>
+                                </tr>
+                                <tr style="height: 0px; padding: 0px;">
+                                    <td class="title"></td>
+                                    <td><a href="../html/forgotPassword.html"><p>Forgot password</p></a></td>
+                                </tr>
+                            </table>
+                            <div class="messegeErrLogin">
+                                <p id="txtSignInNote"></p>
+                            </div>
+                            <div class="btn-login">
+                                <button type="button" onclick="btnSignIn_Click()">Login</button>
+                            </div>
+                            
+                            <!-- <input class="btn-signUp" type="button" value="ADD NEW" onclick="printmsg()" /> -->
+                        </form>
+                    </div>
+                    <!-- <div class="col img">
+                        <img src="../img/login.png" alt="Login photo">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
