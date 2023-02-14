@@ -6,7 +6,6 @@ function btnSignIn_Click()
 }
 function searchByEmail() {
     replace_email = document.getElementById("txtSignInEmail").value.replace(/\./g,',');
-    count = 0;
     axios.get(URL + "/SearchByEmail/"+replace_email).then((response) =>{
         var healthies = response.data;
 
@@ -17,6 +16,7 @@ function searchByEmail() {
                 if(human.Pass === document.getElementById("txtSignInPassword").value)
                 {
                     clear();
+                    sessionStorage.setItem('email', replace_email);
                     window.location.href = "../html/devicesHome.html ";
                 }
                 else
