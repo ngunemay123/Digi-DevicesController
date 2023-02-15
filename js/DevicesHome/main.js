@@ -29,20 +29,27 @@ function check()
             var i =0;
             for(var human of healthies )
             {
-                PID[i] =  human.PID;           
+                PID[i] =  human.PID;
+                
+                i++;
             }
             alert(PID);
+            
         });
 
         setTimeout(() => {
-            for(var j = 0;j > PID.length;j++)
+            for(var j = (PID.length - 1);j >= 0 ;j--)
             {
-                axios.get(URL + "/SearchByPIDProduct/"+PID[i]).then((response) =>{
+                alert(PID[j]);
+                axios.get(URL + "/SearchByPIDProduct/"+PID[j]).then((response) =>{
                     var healthies = response.data;
                     var p = 0;
                     for(var human of healthies )
                     {
-                                   
+                        if(PID[j] === human.PID)
+                        {
+                            alert(human.PID+human.Name+human.Speed);
+                        }
                     }
                 });
             }

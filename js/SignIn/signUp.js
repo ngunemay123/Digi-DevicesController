@@ -13,12 +13,16 @@ const templateID = "template_njqzjob";
 function clickEvent(first,last){
     if(first.value.length){
       document.getElementById(last).focus();
-        count_otp ++;
     }
-    if(count_otp === 6)
+    
+    if(document.getElementById("ist").value != "" 
+    && document.getElementById("sec").value != ""
+    && document.getElementById("third").value != ""
+    && document.getElementById("fourth").value != ""
+    && document.getElementById("fifth").value != ""
+    && document.getElementById("sixth").value != "")
     {
         btnOTPSubmit();
-        count_otp = 0;
     }
   }
 function btnOTPSubmit()
@@ -56,13 +60,6 @@ function btnOTPSubmit()
     else
     {
         alert("sai otp");
-        document.getElementById("ist").value = "";
-    document.getElementById("sec").value = "";
-    document.getElementById("third").value = "";
-    document.getElementById("fourth").value = "";
-    document.getElementById("fifth").value = "";
-    document.getElementById("sixth").value = "";
-    document.getElementById("ist").value.focus();
     }
 }
 function sendEmail()
