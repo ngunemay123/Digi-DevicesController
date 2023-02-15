@@ -20,6 +20,7 @@ function check()
             sessionStorage.setItem('Purchase_Date', human.Purchase_Date);
             sessionStorage.setItem('Date', human.Date);
         }
+        alert(sessionStorage.getItem('Date'));
     });
 
     setTimeout(() => {
@@ -30,6 +31,7 @@ function check()
             {
                 PID[i] =  human.PID;           
             }
+            alert(PID);
         });
 
         setTimeout(() => {
