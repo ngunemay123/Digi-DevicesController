@@ -60,6 +60,13 @@
     margin-bottom: 10px;
 }
 
+.tableData .function .btn-history{
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: solid rgb(211, 211, 211) 2px;
+}
+
 .tableData .function .btn-search{
     margin-left: 10px;
     margin-right: 10px;
