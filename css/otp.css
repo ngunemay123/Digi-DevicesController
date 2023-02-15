@@ -75,16 +75,6 @@
   border: none;
 }
 
-/* .otp button {
-  justify-content: center;
-  background-color: rgb(167, 48, 69);
-  color: white;
-  width: 400px;
-  height: 30px;
-  border-radius: 20px;
-  border: none;
-} */
-
 .otp button:hover {
   transform: scale(1.02);
 }
