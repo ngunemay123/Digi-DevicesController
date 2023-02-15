@@ -44,7 +44,7 @@
           <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <a href="../html/devicesHome.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <h2>DIGI</h2>
+                <img class="logo" src="../img/LOGO DIGI design 2022 PNG.png" alt="Logo">
               </a>
       
               <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
@@ -54,7 +54,7 @@
               </ul>
       
               <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                <input  type="search" class="form" placeholder="Search...">
               </form>
       
               <div class="dropdown text-end">
@@ -66,7 +66,7 @@
                   <li><a class="dropdown-item" href="#">Settings</a></li>
                   <li><a class="dropdown-item" href="#">Profile</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="../html/index.html">Sign out</a></li>
+                  <li><a class="dropdown-item" href="../index.html">Sign out</a></li>
                 </ul>
               </div>
             </div>
@@ -158,121 +158,126 @@
           <section id="tableData" class="tableData">
             <h2>Status</h2>
             <div class="container">
-              <table class="w3-table-all table table-bordered table-hover tableAnalys" style="overflow-y: scroll;">
-                <thead>
-                  <tr class="titleTable">
-                    <td><b>No.</b></td>
-                    <td><b>Devices</b></td>
-                    <td><b>Date</b></td>
-                    <td><b>Time</b></td>
-                    <td><b>Temperature</b></td>
-                    <td><b>Humidity</b></td>
-                    <!-- <td></td>
-                    <td style="width: 300px;"></td>
-
-                    <td></td>
-                    <td style="width: 250px;"></td>
-                    <td style="width: 250px;"></td>
-                  </tr> -->
-                </thead>
-                <tbody>
-                  <tr 
-                  id="co1" 
-                  data-bs-toggle="collapse" 
-                  href="#1" 
-                  aria-controls="1" 
-                  aria-expanded="false" 
-                  aria-colspan="1" 
-                  data-bs-parent="#co1">
-                    <td>1</td>
-                    <td>A</td>
-                    <td>11/2/2023</td>
-                    <td>21:30</td>
-                    <td>25<sup>o</sup>C</b></td>
-                    <td>76<sup>o</sup>F</b></td>
-                    <!-- <td></td>
-                    <td></td>
-                    <td></b></td>
-                    <td></td>
-                    <td></td> -->
-                  </tr>
-                  <thead id="1" class="collapse">
-                    <td></td>
-                    <td><b>Acceleration</b></td>
-                    <td style="width: 200px;"><b>Speed</b></td>
-                    <td><b>Pressure</b></td>
-                    <td style="width: 250px;"><b>Wind direction</b></td>
-                    <td style="width: 250px;"><b>Wind's speed</b></td>
+              <div class="function">
+                <input class="search" type="text" placeholder="Search...">
+                <button class="btn-search" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+              </div>
+              <div>
+                <table class="w3-table-all table table-bordered table-hover tableAnalys" style="overflow-y: scroll;">
+                  <thead>
+                    <tr class="titleTable">
+                      <td><b>ID</b></td>
+                      <td><b>Devices</b></td>
+                      <td><b>Date</b></td>
+                      <td><b>Time</b></td>
+                      <td><b>Temperature</b></td>
+                      <td><b>Humidity</b></td>
+                      <!-- <td></td>
+                      <td style="width: 300px;"></td>
+  
+                      <td></td>
+                      <td style="width: 250px;"></td>
+                      <td style="width: 250px;"></td>
+                    </tr> -->
                   </thead>
-                  <tbody id="1" class="collapse">
-                    <tr>
+                  <tbody>
+                    <tr 
+                    id="co1" 
+                    data-bs-toggle="collapse" 
+                    href="#1" 
+                    aria-controls="1" 
+                    aria-expanded="false" 
+                    aria-colspan="1" 
+                    data-bs-parent="#co1">
+                      <td>1</td>
+                      <td>A</td>
+                      <td>11/2/2023</td>
+                      <td>21:30</td>
+                      <td>25<sup>o</sup>C</b></td>
+                      <td>76<sup>o</sup>F</b></td>
+                      <!-- <td></td>
                       <td></td>
-                      <td>-</td>
-                      <td>30/35 m/s</td>
-                      <td>12%</b></td>
-                      <td>West</td>
-                      <td>16/17 m/s</td>
-                    </tr>
-                    <tr>
+                      <td></b></td>
                       <td></td>
-                      <td>-</td>
-                      <td>23/28 m/s</td>
-                      <td>11%</td>
-                      <td>West</td>
-                      <td>11/17 m/s</td>
+                      <td></td> -->
                     </tr>
+                    <thead id="1" class="collapse">
+                      <td></td>
+                      <td><b>Acceleration</b></td>
+                      <td style="width: 200px;"><b>Speed</b></td>
+                      <td><b>Pressure</b></td>
+                      <td style="width: 250px;"><b>Wind direction</b></td>
+                      <td style="width: 250px;"><b>Wind's speed</b></td>
+                    </thead>
+                    <tbody id="1" class="collapse">
+                      <tr>
+                        <td></td>
+                        <td>-</td>
+                        <td>30/35 m/s</td>
+                        <td>12%</b></td>
+                        <td>West</td>
+                        <td>16/17 m/s</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>-</td>
+                        <td>23/28 m/s</td>
+                        <td>11%</td>
+                        <td>West</td>
+                        <td>11/17 m/s</td>
+                      </tr>
+                    </tbody>
+  
+                    <tr 
+                    id="coB" 
+                    data-bs-toggle="collapse" 
+                    href="#b" 
+                    aria-controls="b" 
+                    aria-expanded="false" 
+                    aria-colspan="b" 
+                    data-bs-parent="#coB">
+                      <td>2</td>
+                      <td>B</td>
+                      <td>11/2/2023</td>
+                      <td>22:18</td>
+                      <td>20<sup>o</sup>C</b></td>
+                      <td>84<sup>o</sup>F</b></td>
+                      <!-- <td></td>
+                      <td></td>
+                      <td></b></td>
+                      <td></td>
+                      <td></td> -->
+                    </tr>
+                    <thead id="b" class="collapse">
+                      <td></td>
+                      <td><b>Acceleration</b></td>
+                      <td style="width: 200px;"><b>Speed</b></td>
+                      <td><b>Pressure</b></td>
+                      <td style="width: 250px;"><b>Wind direction</b></td>
+                      <td style="width: 250px;"><b>Wind's speed</b></td>
+                    </thead>
+                    <tbody id="b" class="collapse">
+                      <tr>
+                        <td></td>
+                        <td>24%</td>
+                        <td>30/35 m/s</td>
+                        <td>12%</b></td>
+                        <td>North</td>
+                        <td>16/17 m/s</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>-</td>
+                        <td>23/28 m/s</td>
+                        <td>11%</td>
+                        <td>West</td>
+                        <td>11/17 m/s</td>
+                      </tr>
+                    </tbody>
                   </tbody>
+                </table>
+              </div>
 
-                  <tr 
-                  id="coB" 
-                  data-bs-toggle="collapse" 
-                  href="#b" 
-                  aria-controls="b" 
-                  aria-expanded="false" 
-                  aria-colspan="b" 
-                  data-bs-parent="#coB">
-                    <td>2</td>
-                    <td>B</td>
-                    <td>11/2/2023</td>
-                    <td>22:18</td>
-                    <td>20<sup>o</sup>C</b></td>
-                    <td>84<sup>o</sup>F</b></td>
-                    <!-- <td></td>
-                    <td></td>
-                    <td></b></td>
-                    <td></td>
-                    <td></td> -->
-                  </tr>
-                  <thead id="b" class="collapse">
-                    <td></td>
-                    <td><b>Acceleration</b></td>
-                    <td style="width: 200px;"><b>Speed</b></td>
-                    <td><b>Pressure</b></td>
-                    <td style="width: 250px;"><b>Wind direction</b></td>
-                    <td style="width: 250px;"><b>Wind's speed</b></td>
-                  </thead>
-                  <tbody id="b" class="collapse">
-                    <tr>
-                      <td></td>
-                      <td>24%</td>
-                      <td>30/35 m/s</td>
-                      <td>12%</b></td>
-                      <td>North</td>
-                      <td>16/17 m/s</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>-</td>
-                      <td>23/28 m/s</td>
-                      <td>11%</td>
-                      <td>West</td>
-                      <td>11/17 m/s</td>
-                    </tr>
-                  </tbody>
-
-                  
-                </tbody>
-              </table>
 
             <script>
               $('.header').click(function(){
@@ -300,12 +305,12 @@
             </script>
           </section>
 
-          <section class="dataDivices-section">
+          <!-- <section class="dataDivices-section">
             <h2>Data devices</h2>
             <div class="container">
                 <div id="chart_div" style="width: auto; height: 500px; text-align: center;"></div>
             </div>
-        </section>
+        </section> -->
 
           <!-- <section class="footer-section" style="background-color: rgb(247, 247, 247);">
             <div class="container">

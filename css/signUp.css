@@ -1,12 +1,8 @@
 .body-signUp{
     background-image: linear-gradient(rgba(175, 37, 63,0.100),rgba(207, 155, 165,0.85)), url("../img/japan_street.jpg");
-    height: 75vh;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    /* width: 100%;
-    height: 100%;
-    background-color: rgb(238, 238, 238); */
 }
 
 .signUp-title h2{
@@ -51,11 +47,13 @@
 }
 
 .signUp-title form tr>td.select-option>select{
-    width: 263px;
+    width: 260px;
+    height: 35px;
     border-radius: 20px;
     border: solid 1px rgb(196, 81, 102);
     font-size: 22px;
     outline: none;
+    font-size: 16px;
 }
 
 .signUp-title form tr>td.select-option>select{
@@ -74,10 +72,13 @@
 }
 
 .signUp-title .input{
+    width: 260px;
+    height: 35px;
     padding-left: 12px;
     border-radius: 20px;
     border: solid 1px rgb(196, 81, 102);
     font-size: 22px;
+    font-size: 16px;
     outline: none;
 }
 
@@ -141,30 +142,35 @@
     display: flex;
 }
 .signUp-title form .captcha #captcha-form{
-    letter-spacing: 5px;
+    letter-spacing: 16px;
+    font-size: 16px;
+    
 }
 
 .signUp-title form .captcha .captcha-form input{
     width: 260px;
+    height: 35px;
     border-radius: 20px;
     border: none;
     padding-left: 12px;
     margin-right: 2px;
     border: solid 1px rgb(196, 81, 102);
+    font-style: italic;
     outline: none;
+    
 }
 
 .signUp-title form .captcha .captcha-form .captcha-refresh{
-    width: 40px;
+    width: 0px;
     border: none;
     outline: none;
     cursor: pointer;
-    border: solid 1px rgb(196, 81, 102);
+    /* border: solid 1px rgb(196, 81, 102); */
     color: rgb(167, 48, 69);
-    border-radius: 50px;
-    margin-left: -42px;
+    /* border-radius: 50px; */
+    margin-left: -33px;
     background-color: rgb(255, 255, 255);
-    font-size: 22px;
+    
 }
 
 .signUp-title .messegeErr #txtNote{
@@ -177,6 +183,6 @@
 }
 
 .signUp-title form .btn-siup:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 

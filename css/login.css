@@ -1,20 +1,9 @@
 .body-login{
     background-image: linear-gradient(rgba(175, 37, 63,0.100),rgba(207, 155, 165,0.85)), url("../img/tokio.jpg");
-    height: 75vh;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
-
-.login-title .from-login{
-    
-}
-
-/* .login-title{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(238, 238, 238);
-} */
 
 .login-title h2{
     color: rgb(31, 31, 31);
@@ -23,10 +12,6 @@
     letter-spacing: 5px;
     font-style: italic;
 }
-
-/* .body-login .container{
-    justify-content: center;
-} */
 
 .login-title .from-login {
     display: flex;
@@ -52,12 +37,14 @@
 }
 
 .login-title .input{
+    width: 260px;
+    height: 35px;
     float: right;
     padding-left: 12px;
     border-radius: 20px;
     border: none;
     border: solid 1px rgb(196, 81, 102);
-    font-size: 22px;
+    font-size: 16px;
     outline: none;
 }
 
@@ -66,14 +53,6 @@
     color: rgb(0, 0, 0);
     font-weight: bold;
 }
-
-/* .login-title img{
-    height: auto;
-    width: 480px;
-    float: right;
-    margin-right: 30%;
-} */
-
 .login-title .container{
     margin-top: 120px;
 }
@@ -82,7 +61,6 @@
     width: 340px;
     border-radius: 20px;
     background-color: rgb(167, 48, 69);
-    /* margin-top: 20px; */
     border: none;
     color: white;
 }
@@ -93,7 +71,7 @@
 }
 
 .login-title button:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .login-title a p{

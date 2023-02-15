@@ -32,26 +32,50 @@
     margin-bottom: 30px;
 } */
 
-.dataDivices-section h2{
+/* .dataDivices-section h2{
     text-align: center;
     color: rgb(176, 0, 32);
     margin-bottom: 80px;
-}
+} */
 
 .scroltable-wrapper{position:relative}.scroltable-container{overflow:auto}.scroltable-nav{display:none;position:absolute;width:60px;height:100%;cursor:pointer}.scroltable-nav.scroltable-nav-left{left:0;background:url(images/arrow-left.png) no-repeat 10px center,-webkit-linear-gradient(180deg,rgba(255,255,255,0),#fff);background:url(images/arrow-left.png) no-repeat 10px center,-moz-linear-gradient(to left,rgba(255,255,255,0),#fff);background:url(images/arrow-left.png) no-repeat 10px center,-ms-linear-gradient(to left,rgba(255,255,255,0),#fff);background:url(images/arrow-left.png) no-repeat 10px center,-o-linear-gradient(to left,rgba(255,255,255,0),#fff);background:url(images/arrow-left.png) no-repeat 10px center,linear-gradient(to left,rgba(255,255,255,0),#fff)}.scroltable-nav.scroltable-nav-right{right:0;background:url(images/arrow-right.png) no-repeat right 10px center,-webkit-linear-gradient(0,rgba(255,255,255,0),#fff);background:url(/images/arrow-right.png) no-repeat right 10px center,-moz-linear-gradient(to right,rgba(255,255,255,0),#fff);background:url(images/arrow-right.png) no-repeat right 10px center,-ms-linear-gradient(to right,rgba(255,255,255,0),#fff);background:url(/images/arrow-right.png) no-repeat right 10px center,-o-linear-gradient(to right,rgba(255,255,255,0),#fff);background:url(images/arrow-right.png) no-repeat right 10px center,linear-gradient(to right,rgba(255,255,255,0),#fff)}
 
-.header img{
+/* .header img{
     height: auto;
     width: auto;
     border: solid rgb(253, 253, 253) 2px;
     border-radius: 25px;
     display: inline;
-}
+} */
 
 .tableData h2{
     text-align: center;
     color: rgb(176, 0, 32);
     margin-bottom: 80px;
+}
+
+.tableData .function{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;
+}
+
+.tableData .function .btn-search{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50px;
+    border-radius: 5px;
+    border: solid rgb(211, 211, 211) 2px;
+}
+
+.tableData .function .search{
+    width: 200px;
+    height: 35px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: solid rgb(211, 211, 211) 2px;
+    font-size: 16px;
+    outline: none;
 }
 
 .tableData tr>td{
