@@ -13,10 +13,37 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/history.css" />
     <title>Document</title>
+
+    <head>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Devices', 'paramenter'],
+            ['Temperature', 25],
+            ['Humidity',      76],
+            ['Acceleration',  30],
+            ['Pressure', 12],
+            ['Wind of speed',    16]
+          ]);
+  
+          var options = {
+            title: 'Name device',
+            is3D: true,
+            backgroundColor: "transparent",
+          };
+  
+          var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+          chart.draw(data, options);
+        }
+      </script>
   </head>
   <body>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <header class="p-3 mb-3 border-bottom">
+
       <div class="container">
         <div
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
@@ -81,26 +108,9 @@
           </div>
         </div>
       </div>
-    </header>
+      
 
-    <section class="dataDivices-section">
-      <h2>Data graph</h2>
-      <div class="container">
-          <div class="option">
-            <select class="selc">
-                <option>Hour</option>
-                <option>Day</option>
-                <option>Month</option>
-            </select>
-          </div>
-        <div
-          id="chart_div"
-          style="width: 100%; height: 500px;"
-        ></div>
-      </div>
-    </section>
-
-    <script
+      <!-- <script
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
     ></script>
@@ -115,11 +125,14 @@
           ["21:40", 25, 74, 35, 30, 18, 0, 20],
           ["21:50", 28, 71, 40, 27, 16, 0, 17],
           ["22:00", 30, 74, 31, 32, 18, 0, 18],
+          ["22:00", 32, 80, 25, 22, 10, 0, 14],
+          ["22:00", 35, 70, 15, 20, 32, 0, 23],
+          ["22:00", 19, 75, 19, 16, 11, 0, 18],
         ]);
         
 
         var options = {
-          title: "Data devices",
+          title: "Name devices",
           hAxis: { title: "Day", titleTextStyle: { color: "#000" } },
           backgroundColor: '#f0f0f0',
           vAxis: { minValue: 0 },
@@ -130,6 +143,128 @@
         );
         chart.draw(data, options);
       }
-    </script>
+    </script> -->
+    
+  
+  </header>
+
+    <section class="dataDivices-section">
+      <h2>Data graph</h2>
+
+      <!-- <div class="container">
+          <div class="option">
+            <select class="selc">
+                <option selected>Hour</option>
+                <option>Day</option>
+                <option>Month</option>
+            </select>
+          </div>
+          <div style="display: flex; justify-content: center;">
+              <div id="chart_div" style="width: 100%; height: 500px;"></div>
+          </div>
+        
+      </div> -->
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col detail-info">
+            <h3>device information</h3>
+            <div class="info">
+              <form>
+                <table>
+                  <tr>
+                    <td class="tittle"><b>ID:</b></td>
+                    <td class="fill">125</td>
+                  </tr>
+                  <tr>
+                    <td class="tittle"><b>Device:</b></td>
+                    <td class="fill">ABC</td>
+                  </tr>
+                  <tr>
+                    <td class="tittle"><b>Location:</b></td>
+                    <td class="fill">HCM</td>
+                  </tr>
+                  <tr>
+                    <td class="tittle"><b>Active date:</b></td>
+                    <td class="fill">16/02/2023</td>
+                  </tr>
+                </table>
+              </form>
+              <div class="note">
+                <div class="tittleNote"><b>Note</b></div>
+                <div class="infoNote">Recently your devices are acting unstable. Please double check your devices or you can call the device center for support from consultants</div>
+              </div>
+            </div>
+          </div>
+          <div class="col graph-data">
+            <div class="graph">
+              <h3>Graph</h3>
+              <div id="piechart_3d" style="width: fix-content; height: 350px;"></div>
+              <div class="note-graph">
+                <p><b>Wind direction: </b>West</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col detail-parameter">
+            <h3>device information</h3>
+            <div class="info">
+              <div class="row">
+                <div class="col">
+                  <form>
+                    <table>
+                      <tr>
+                        <td class="tittle"><b>Temperature: </b></td>
+                        <td class="fill">25<sup>o</sup>C</td>
+                      </tr>
+                      <tr>
+                        <td class="tittle"><b>Humidity: </b></td>
+                        <td class="fill">76<sup>o</sup>F</b></td>
+                      </tr>
+                      <tr>
+                        <td class="tittle"><b>Acceleration: </b></td>
+                        <td class="fill">-</td>
+                      </tr>
+                      <tr>
+                        <td class="tittle"><b>Wind direction: </b></td>
+                        <td class="fill">West</td>
+                      </tr>
+                    </table>
+                  </form>
+                </div>
+                <div class="col">
+                  <form>
+                    <table>
+                      <tr>
+                        <td class="tittle"><b>Speed: </b></td>
+                        <td class="fill">30/35 m/s</td>
+                      </tr>
+                      <tr>
+                        <td class="tittle"><b>Wind direction: </b></td>
+                        <td class="fill">12%</td>
+                      </tr>
+                      <tr>
+                        <td class="tittle"><b>Wind's speed: </b></td>
+                        <td class="fill">16/17 m/s</td>
+                      </tr>
+                      <tr>
+                        <td class="tittle"><b> </b></td>
+                        <td class="fill"></td>
+                      </tr>
+                      
+                    </table>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

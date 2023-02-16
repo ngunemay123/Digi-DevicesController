@@ -10,8 +10,13 @@
 
 .tableData h2{
     text-align: center;
-    color: #208aed;
+    color: #5a5a5a;
+    /* background: -webkit-linear-gradient(#000000, #ED2024);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
     margin-bottom: 80px;
+    font-style: italic;
+    letter-spacing: 5px;
 }
 
 .tableData .function{
@@ -20,11 +25,23 @@
     margin-bottom: 10px;
 }
 
-.tableData .function .btn-history{
+.tableData table .detail-table .btn-history{
     width: 40px;
-    margin-right: 10px;
     border-radius: 5px;
-    border: solid rgb(211, 211, 211) 2px;
+    background-color: transparent;
+    border: none;
+}
+
+.tableData table .detail-table .btn-history:hover{
+    transform: scale(1.1);
+}
+
+.tableData table .detail-table .btn-history a i{
+    color: black;
+}
+
+.tableData table .detail-table .btn-history a i:hover{
+    color: #ED2024;
 }
 
 .tableData .function .btn-search{
@@ -55,7 +72,22 @@
     background-color: #f0f0f0;
 }
 
+.tableData table .detail-table .btn-detail{
+    text-align: right;
+    border: none; 
+    background-color: transparent;
+}
+
+.tableData table .detail-table .btn-detail:hover{
+    transform: scale(1.1);
+}
+
+.tableData table .detail-table .btn-detail i:hover{
+    color: #ED2024;
+}
+
 .tableData .tableAnalys{
+    border-radius: 10px 10px 0 0;
     overflow: scroll;
     width: 100%;
 }

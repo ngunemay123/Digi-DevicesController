@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.dataDivices-section .container{
+/* .dataDivices-section .container{
     background-color: #f0f0f0;
     padding: 30px;
     border-radius: 20px;
@@ -21,11 +21,23 @@
     justify-content: center;
 }
 
-/* .dataDivices-section .container #chart_div{
-    width: auto; 
-    height: 500px; 
-    text-align: center
+.dataDivices-section .container .option{
+    display: flex;
+    justify-content: center;
+}
+
+select{
+    font-weight: bold;
+}
+
+.dataDivices-section .container .option select{
+    width: auto;
+    background-color: #f0f0f0;
+    border: none;
+    outline: none;
+    padding: 5px;
 } */
+
 
 /* .dataDivices-section img{
     height: 250px;
@@ -35,7 +47,9 @@
     display: inline;
 } */
 
-.dataDivices-section .container{
+
+
+/* .dataDivices-section .container{
     justify-content: center;
 }
 
@@ -45,10 +59,142 @@
 
 .dataDivices-section img{
     margin-bottom: 30px;
-}
+} */
 
 .dataDivices-section h2{
     text-align: center;
     color: #208aed;
     margin-bottom: 80px;
+}
+
+.row{
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------- */
+/* ----------------- DEVICE INFORMATION ---------------- */
+/* ----------------------------------------------------- */
+
+.dataDivices-section .container .detail-info{
+    background-color: rgb(243, 243, 243);
+    padding: 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 5px 10px 10px rgb(165, 165, 165);
+}
+
+.dataDivices-section .container .detail-info h3{
+    text-align: center;
+    margin-top: 5px;
+    font-style: italic;
+    color: #C45166;
+}
+
+.dataDivices-section .container .detail-info form{
+    margin-top: 50px;
+}
+
+.dataDivices-section .container .detail-info form table{
+    height: 150px;
+}
+
+.dataDivices-section .container .detail-info form>table .tittle{
+    /* text-align: right; */
+    width: 140px;
+}
+
+.dataDivices-section .container .detail-info form>table .fill{
+   padding-left: 10px;
+   ;
+}
+
+.dataDivices-section .container .detail-info .info .note{
+   margin-top: 20px;
+}
+
+.dataDivices-section .container .detail-info form>table tr,td{
+    font-size: 23px;
+}
+
+.dataDivices-section .container .detail-info .info .note .tittleNote{
+    width: fit-content;
+    padding: 0px 15px;
+    margin-left: 20px;
+    border: solid 3px #333;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+} 
+
+.dataDivices-section .container .detail-info .info .note .infoNote{
+    padding: 8px;
+    border: solid #333 3px;
+    border-radius: 20px;
+    text-align: justify;
+} 
+
+/* ----------------------------------------------------- */
+/* ------------------------ GRAPH ---------------------- */
+/* ----------------------------------------------------- */
+
+.dataDivices-section .container .graph-data{
+    background-color: rgb(243, 243, 243);
+    padding: 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 5px 10px 10px rgb(165, 165, 165);
+}
+
+.dataDivices-section .container .graph-data h3{
+    text-align: center;
+    margin-top: 5px;
+    font-style: italic;
+    color: #C45166;
+    /* margin-bottom: 50px; */
+}
+
+.dataDivices-section .container .graph-data{
+    background-color: rgb(243, 243, 243);
+    padding: 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 20px;
+}
+
+/* ----------------------------------------------------- */
+/* --------------------- PARAMETER --------------------- */
+/* ----------------------------------------------------- */
+
+.dataDivices-section .container .detail-parameter{
+    background-color: rgb(243, 243, 243);
+    padding: 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 5px 10px 10px rgb(165, 165, 165);
+}
+
+.dataDivices-section .container .detail-parameter h3{
+    text-align: center;
+    margin-top: 5px;
+    font-style: italic;
+    color: #C45166;
+}
+
+.dataDivices-section .container .detail-parameter form{
+    margin-top: 50px;
+}
+
+/* .dataDivices-section .container .detail-parameter form>table {
+    height: 150px;
+} */
+
+.dataDivices-section .container .detail-parameter form>table tr,td{
+    font-size: 23px;
+}
+
+.dataDivices-section .container .detail-parameter form>table .fill{
+    padding-left: 10px;
 }
