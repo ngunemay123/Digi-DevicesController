@@ -11,31 +11,6 @@
         <title>Website Demo</title>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="../js/DevicesHome/main.js"></script>
-
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-            ['Year', 'Sales', 'Expenses'],
-            ['2013',  1000,      400],
-            ['2014',  1170,      460],
-            ['2015',  660,       1120],
-            ['2016',  1030,      540]
-            ]);
-
-            var options = {
-            title: 'Data devices',
-            hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-            vAxis: {minValue: 0}
-            };
-
-            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-        }
-        </script>
     </head>
 
     <body onload="check()">
@@ -49,8 +24,8 @@
       
               <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
                 <li><a href="../html/devicesHome.html" class="nav-link px-2 link-secondary">Home</a></li>
-                <li><a href="../html/contact.html" class="nav-link px-2 link-dark">Contact</a></li>
-                <li><a href="../html/info.html" class="nav-link px-2 link-dark">Devices</a></li>
+                <li><a href="../html/contact.html" class="nav-link px-2 link-light">Contact</a></li>
+                <li><a href="../html/info.html" class="nav-link px-2 link-light">Devices</a></li>
               </ul>
       
               <div class="dropdown text-end">
@@ -155,17 +130,17 @@
             <h2>Status</h2>
             <div class="container">
               <div class="function">
-                <button class="btn-history" type="button"><i class="fa-solid fa-clock-rotate-left"></i></button>
+                <button class="btn-history" type="button"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i></a></button>
                 <input class="search" type="text" placeholder="Search...">
                 <button class="btn-search" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
               </div>
               <div>
                 <table class="w3-table-all table table-bordered table-hover tableAnalys" style="overflow-y: scroll;">
                   <thead>
-                    <tr class="titleTable">
+                    <tr class="table-dark">
                       <td><b>ID</b></td>
                       <td><b>Devices</b></td>
-                      <td><b>Place</b></td>
+                      <td><b>Location</b></td>
                       <td><b>Date</b></td>
                       <td><b>Time</b></td>
                       <td><b>Temperature</b></td>
@@ -175,11 +150,12 @@
   
                       <td></td>
                       <td style="width: 250px;"></td>
-                      <td style="width: 250px;"></td>
-                    </tr> -->
+                      <td style="width: 250px;"></td> -->
+                    </tr>
                   </thead>
                   <tbody>
                     <tr 
+                    class="table-secondary"
                     id="co1" 
                     data-bs-toggle="collapse" 
                     href="#1" 
@@ -200,28 +176,33 @@
                       <td></td>
                       <td></td> -->
                     </tr>
-                    <thead id="1" class="collapse">
-                      <td></td>
-                      <td><b>Acceleration</b></td>
-                      <td style="width: 200px;"><b>Speed</b></td>
-                      <td><b>Pressure</b></td>
-                      <td style="width: 250px;"><b>Wind direction</b></td>
-                      <td style="width: 250px;"><b>Wind's speed</b></td>
-                      <td style="width: 250px;"></td>
-                    </thead>
-                    <tbody id="1" class="collapse">
-                      <tr>
-                        <td></td>
-                        <td>-</td>
-                        <td>30/35 m/s</td>
-                        <td>12%</b></td>
-                        <td>West</td>
-                        <td>16/17 m/s</td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-  
+                      <thead id="1" class="collapse">
+                        <tr>
+                          <td></td>
+                          <td><b>Acceleration</b></td>
+                          <td style="width: 200px;"><b>Speed</b></td>
+                          <td><b>Pressure</b></td>
+                          <td style="width: 250px;"><b>Wind direction</b></td>
+                          <td style="width: 250px;"><b>Wind's speed</b></td>
+                          <td style="width: 250px;"></td>
+                        </tr>
+                        
+                      </thead>
+                      <tbody id="1" class="collapse">
+                        <tr>
+                          <td></td>
+                          <td>-</td>
+                          <td>30/35 m/s</td>
+                          <td>12%</b></td>
+                          <td>West</td>
+                          <td>16/17 m/s</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </div>
+                    
                     <tr 
+                    class="table-secondary"
                     id="coB" 
                     data-bs-toggle="collapse" 
                     href="#b" 
@@ -292,13 +273,6 @@
               })();
             </script>
           </section>
-
-          <!-- <section class="dataDivices-section">
-            <h2>Data devices</h2>
-            <div class="container">
-                <div id="chart_div" style="width: auto; height: 500px; text-align: center;"></div>
-            </div>
-        </section> -->
 
           <!-- <section class="footer-section" style="background-color: rgb(247, 247, 247);">
             <div class="container">

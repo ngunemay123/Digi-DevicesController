@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.dataDivices-section .container{
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.dataDivices-section{
+    margin: auto;
+}
+
+.dataDivices-section .container .option .selc{
+    
+}
+
+.dataDivices-section .container{
+    justify-content: center;
+}
+
+/* .dataDivices-section .container #chart_div{
+    width: auto; 
+    height: 500px; 
+    text-align: center
+} */
+
+/* .dataDivices-section img{
+    height: 250px;
+    width: 400px;
+    border: solid rgb(255, 229, 229) 2px;
+    border-radius: 25px;
+    display: inline;
+} */
+
+.dataDivices-section .container{
+    justify-content: center;
+}
+
+.dataDivices-section p{
+    margin-top: 10px;
+}
+
+.dataDivices-section img{
+    margin-bottom: 30px;
+}
+
+.dataDivices-section h2{
+    text-align: center;
+    color: #208aed;
+    margin-bottom: 80px;
+}
