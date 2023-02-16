@@ -61,14 +61,42 @@ select{
     margin-bottom: 30px;
 } */
 
+.dataDivices-section{
+    background-color: #ffffff;
+}
+
 .dataDivices-section h2{
     text-align: center;
-    color: #208aed;
+    color: #a09e15;
     margin-bottom: 80px;
 }
 
 .row{
     margin-bottom: 20px;
+}
+
+.dataDivices-section .container-general {
+    display: flex;
+    justify-content: center;
+}
+
+.dataDivices-section .container-general .wrap{
+    width: fit-content;
+    background-color: rgba(230, 230, 230);
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px
+}
+
+.dataDivices-section .container-general .wrap select{
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    width: fit-content;
+    border: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 1px 5px 10px 5px;
+    margin-left: 30px;
+    outline: none;
 }
 
 /* ----------------------------------------------------- */
@@ -138,9 +166,9 @@ select{
 /* ----------------------------------------------------- */
 
 .dataDivices-section .container .graph-data{
-    background-color: rgb(243, 243, 243);
     padding: 20px;
-    margin-right: 10px;
+    background-color: rgb(243, 243, 243);
+    margin-top: 10px;
     border-radius: 20px;
     border: none;
     box-shadow: 5px 10px 10px rgb(165, 165, 165);
@@ -151,18 +179,7 @@ select{
     margin-top: 5px;
     font-style: italic;
     color: #C45166;
-    /* margin-bottom: 50px; */
 }
-
-.dataDivices-section .container .graph-data{
-    background-color: rgb(243, 243, 243);
-    padding: 20px;
-    margin-left: 10px;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 20px;
-}
-
 /* ----------------------------------------------------- */
 /* --------------------- PARAMETER --------------------- */
 /* ----------------------------------------------------- */
@@ -170,7 +187,6 @@ select{
 .dataDivices-section .container .detail-parameter{
     background-color: rgb(243, 243, 243);
     padding: 20px;
-    margin-right: 10px;
     border-radius: 20px;
     border: none;
     box-shadow: 5px 10px 10px rgb(165, 165, 165);
@@ -180,21 +196,27 @@ select{
     text-align: center;
     margin-top: 5px;
     font-style: italic;
-    color: #C45166;
+    color: #c45151;
 }
 
 .dataDivices-section .container .detail-parameter form{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
-/* .dataDivices-section .container .detail-parameter form>table {
-    height: 150px;
-} */
+.dataDivices-section .container .detail-parameter form>table {
+    height: 350px;
+}
 
 .dataDivices-section .container .detail-parameter form>table tr,td{
     font-size: 23px;
 }
 
+.dataDivices-section .container .detail-parameter form>table .tittle{
+    text-align: left;
+    padding-left: 20px;
+    
+}
+
 .dataDivices-section .container .detail-parameter form>table .fill{
-    padding-left: 10px;
+    padding-left: 16px;
 }

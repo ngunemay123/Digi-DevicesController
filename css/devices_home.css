@@ -19,6 +19,12 @@
     letter-spacing: 5px;
 }
 
+.tableData .container{
+    background: rgba(235, 235, 235, 0.4);
+    padding: 30px;
+    border-radius: 20px;
+}
+
 .tableData .function{
     display: flex;
     justify-content: right;

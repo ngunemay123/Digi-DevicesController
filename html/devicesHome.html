@@ -23,14 +23,14 @@
               </a>
       
               <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
-                <li><a href="../html/devicesHome.html" class="nav-link px-2 $cyan-100">Home</a></li>
+                <li><a href="../html/devicesHome.html" class="nav-link px-2" style="color: rgb(91, 155, 238);">Home</a></li>
                 <li><a href="#" class="nav-link px-2 link-light">Contact</a></li>
                 <li><a href="#" class="nav-link px-2 link-light">Devices</a></li>
               </ul>
       
               <div class="dropdown text-end">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="../img/IoT-Devices.jpg" alt="mdo" width="42" height="42" class="rounded-circle">
+                  <img src="../img/user.png" alt="mdo" width="42" height="42" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small">
                   <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -85,47 +85,6 @@
               </div>
         </div> -->
 
-        <!-- <section class="devices-section">
-            <h2>Status</h2>
-              <div class="container">
-                  <div class="row">
-                      <div class="col-3 col-md-4">
-                          <img src="../img/jcj2zmlr.jpeg" alt="...">
-                      </div>
-                      <div class="col-md-7">
-                        <p><b>Status:</b> ON</p>
-                        <p><b>Data:</b> 26%</b>
-                        <p><b>Data:</b> 76%</p>
-                        <p><b>Note:</b> Strong storm</p>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-3 col-md-4">
-                          <img src="../img/lidar.jpg" alt="...">
-                      </div>
-                      <div class="col-md-7">
-                        <p><b>Status:</b> OFF</p>
-                        <p><b>Data:</b> __%</b>
-                        <p><b>Data:</b> __%</p>
-                        <p><b>Note:</b></p>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-3 col-md-4">
-                          <img src="../img/pH-Sensor_1.jpg" alt="...">
-                      </div>
-                      <div class="col-md-7">
-                        <p><b>Status:</b> OFF</p>
-                        <p><b>Data:</b> __%</b>
-                        <p><b>Data:</b> __%</p>
-                        <p><b>Note:</b></p>
-                      </div>
-                  </div>
-              </div> 
-          </section> -->
-
-
-
           <section id="tableData" class="tableData">
             <h2>Status</h2>
             <div class="container">
@@ -144,14 +103,6 @@
                       <td><b>Time</b></td>
                       <td><b>Parameter</b></td>
                       <td><b>Detail</b></td>
-                      <!-- <td><b>Temperature</b></td>
-                      <td><b>Humidity</b></td> -->
-                      <!-- <td></td>
-                      <td style="width: 300px;"></td>
-  
-                      <td></td>
-                      <td style="width: 250px;"></td>
-                      <td style="width: 250px;"></td> -->
                     </tr>
                   </thead>
                   <tbody>
@@ -196,7 +147,7 @@
                           <td style="width: 200px;"><b>Speed</b></td>
                           <td><b>Pressure</b></td>
                           <td style="width: 200px;"><b>Wind direction</b></td>
-                          <td style="width: 200px;"><b>Wind's speed</b></td>
+                          <td style="width: 200px;"><b>Wind speed</b></td>
                           <td></td>
                         </tr>
                         
@@ -215,7 +166,8 @@
                     </div>
                     
                     <tr 
-                    class="table-secondary detail-table">
+                    class="table-secondary detail-table"
+                    ondblclick="location.href='history.html'">
                       <td>2</td>
                       <td>B</td>
                       <td>HNC</td>
@@ -244,12 +196,6 @@
                           </a>
                         </button>
                       </td>
-                      <!-- <td>84<sup>o</sup>F</b></td> -->
-                      <!-- <td></td>
-                      <td></td>
-                      <td></b></td>
-                      <td></td>
-                      <td></td> -->
                     </tr>
                     <thead id="b" class="collapse">
                       <td><b>Humidity</b></td>
@@ -257,7 +203,7 @@
                       <td style="width: 200px;"><b>Speed</b></td>
                       <td><b>Pressure</b></td>
                       <td style="width: 200px;"><b>Wind direction</b></td>
-                      <td style="width: 200px;"><b>Wind's speed</b></td>
+                      <td style="width: 200px;"><b>Wind speed</b></td>
                       <td></td>
                     </thead>
                     <tbody id="b" class="collapse">

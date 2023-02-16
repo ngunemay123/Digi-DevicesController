@@ -12,6 +12,8 @@ html{
     text-rendering: optimizeLegibility;
     margin: auto;
     font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Average Sans', sans-serif; */
+    /* font-family: 'Bubblegum Sans', cursive; */
     justify-content: center;
 }
 
