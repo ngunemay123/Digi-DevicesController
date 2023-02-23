@@ -5,9 +5,9 @@ var validate,checkEmail;
 function btnForgotPassword()
 {
     searchByEmail();    
-    checkValidate();
-    setTimeout(() => {
     
+    setTimeout(() => {
+        checkValidate();
         if(validate)
         {
             document.getElementById("txtForgotPasswordNote").innerHTML = "";
@@ -47,7 +47,7 @@ function searchByEmail() {
         var healthies = response.data;
         for(var human of healthies )
         {
-            if(human.Email != "")
+            if(human.Email != replace_email)
             {
                 check = true;
             }
@@ -59,5 +59,5 @@ function searchByEmail() {
         checkEmail = true;
     }
     else checkEmail =  false;
-      }, 1500);
+      }, 1000);
 }
