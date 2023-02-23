@@ -21,7 +21,7 @@ function check()
             sessionStorage.setItem('Purchase_Date', human.Purchase_Date);
             sessionStorage.setItem('Date', human.Date);
         }
-        alert(sessionStorage.getItem('UID'));
+
     });
 
     setTimeout(() => {
@@ -43,11 +43,8 @@ function GetParameter()
     });
 
     setTimeout(() => {
-        alert(PIDc.length);
         for(var j = (PIDc.length - 1);j >= 0 ;j--)
         {
-            alert("tru")
-            alert(PIDc[j]);
             check_parameter.length = 0;
         
             var bien = []; 
@@ -91,11 +88,10 @@ function GetParameter()
                         {
                             check_parameter.push("Wind_Direction");
                         }
-                        alert(check_parameter);
+        
 
                         setTimeout(() => {
-                            alert("check");
-                            alert(PIDc[j]);
+                           
                             axios.get(URL + "/SearchByPIDParameter/"+PIDc[j+1]).then((response) =>{
                                 var healthies = response.data;
                                 for(var human of healthies )
@@ -132,7 +128,7 @@ function GetParameter()
                                         }
                                     }
                                 }
-                                alert(bien);
+                            
                             });
                           }, 1500);
                     // }
