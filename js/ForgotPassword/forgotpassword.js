@@ -1,20 +1,36 @@
 const URL = "https://digi27.azurewebsites.net/api/healthies";
-
+var replace_email1;
 var searchByEmail;
 var validate,checkEmail;
+function sendEmail()
+{
+    var params = {
+        name : "DigiTechnology",
+        email: document.getElementById("txtForgotPasswordEmail").value,
+        message : "https://digi-devices-controller.netlify.app/html/reset-password.html",
+    }
+    emailjs.send(serviceID,templateID,params).then((res) =>{
+    }) 
+    .catch((err) => console.log(err));
+}
 function btnForgotPassword()
 {
     searchByEmail();    
-    
     setTimeout(() => {
         checkValidate();
         if(validate)
         {
+            
             document.getElementById("txtForgotPasswordNote").innerHTML = "";
-            alert("thành cong ");
+            sendEmail();
+            localStorage.setItem('forgotemail',replace_email1);
+            setTimeout(() => {
+                
+            }
+                  , 1000);
         }
     }
-          , 1500);
+          , 800);
 }
 function checkValidate()
 {
@@ -41,13 +57,13 @@ function checkValidate()
     }
 }
 function searchByEmail() {
-    replace_email = document.getElementById("txtForgotPasswordEmail").value.replace(/\./g,',');
+    replace_email1 = document.getElementById("txtForgotPasswordEmail").value.replace(/\./g,',');
     var check = false;
-    axios.get(URL + "/SearchByEmail/"+replace_email).then((response) =>{
+    axios.get(URL + "/SearchByEmail/"+replace_email1).then((response) =>{
         var healthies = response.data;
         for(var human of healthies )
         {
-            if(human.Email != replace_email)
+            if(human.Email != replace_email1)
             {
                 check = true;
             }

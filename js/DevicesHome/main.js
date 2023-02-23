@@ -1,11 +1,12 @@
 const URL = "https://digi27.azurewebsites.net/api/healthies";
 var email;
 var PIDc = [];
-var parameter = [];
+var check_parameter = [];
+
 function check()
 {
     email = sessionStorage.getItem('email');
-    axios.get(URL + "/SearchByEmail/"+email).then((response) =>{
+    axios.get(URL + "/SearchByEmail/tr6r20@gmail,com").then((response) =>{
         var healthies = response.data;
 
         for(var human of healthies )
@@ -20,105 +21,125 @@ function check()
             sessionStorage.setItem('Purchase_Date', human.Purchase_Date);
             sessionStorage.setItem('Date', human.Date);
         }
+        alert(sessionStorage.getItem('UID'));
+    });
+
+    setTimeout(() => {
+        GetParameter();
+      }, 2000);
+
+}
+function GetParameter()
+{
+    axios.get(URL + "/SearchByUIDOwner/"+sessionStorage.getItem('UID')).then((response) =>{
+        var healthies = response.data;
+        var i =0;
+        for(var human of healthies )
+        {
+            PIDc[i] =  human.PID;
+            i++;
+        }
         
     });
 
     setTimeout(() => {
-        axios.get(URL + "/SearchByUIDOwner/"+sessionStorage.getItem('UID')).then((response) =>{
-            var healthies = response.data;
-            var i =0;
-            for(var human of healthies )
-            {
-                PIDc[i] =  human.PID;
-                i++;
-            }
-        });
+        alert(PIDc.length);
+        for(var j = (PIDc.length - 1);j >= 0 ;j--)
+        {
+            alert("tru")
+            alert(PIDc[j]);
+            check_parameter.length = 0;
+        
+            var bien = []; 
+            axios.get(URL + "/SearchByPIDProduct/"+PIDc[j]).then((response) =>{
+                var healthies = response.data;
 
-        setTimeout(() => {
-            for(var j = (PIDc.length - 1);j >= 0 ;j--)
-            {
-                var count = 0;
-                var parameter = [];   
-                
-                axios.get(URL + "/SearchByPIDProduct/"+PIDc[j]).then((response) =>{
-                    var healthies = response.data;
+                for(var human of healthies )
+                {
+                    // if(human.Is_read_file === "y")
+                    // {
+                    //     //get file về đọc
+                    // }
+                    // if(human.Is_read_file === "n")
+                    // {
+                    //    //đọc trực tiếp 
+                        if(human.Acceleration === "Y")
+                        {
+                            check_parameter.push("Acceleration");
+                        }
+                        if(human.Speed === "Y")
+                        {
+                            check_parameter.push("Speed");
+                        }
+                        if(human.Temperature === "Y")
+                        {
+                            check_parameter.push("Temperature");
+                        }
+                        if(human.Humidity === "Y")
+                        {
+                            check_parameter.push("Humidity");
+                        }
+                        if(human.Pressure === "Y")
+                        {
+                            check_parameter.push("Pressure");
+                        }
+                        if(human.Speed_Of_Winds === "Y")
+                        {
+                            check_parameter.push("Speed_Of_Winds");
+                        }
+                        if(human.Wind_Direction === "Y")
+                        {
+                            check_parameter.push("Wind_Direction");
+                        }
+                        alert(check_parameter);
 
-                    for(var human of healthies )
-                    {
-                        // if(human.Is_read_file === "y")
-                        // {
-                        //     //get file về đọc
-                        // }
-                        // if(human.Is_read_file === "n")
-                        // {
-                        //    //đọc trực tiếp 
-                            if(human.Acceleration != "")
-                            {
-                                parameter.push("Acceleration");
-                            }
-                            if(human.Speed != "")
-                            {
-                                parameter.push("Speed");
-                            }
-                            if(human.Temperature != "")
-                            {
-                                parameter.push("Temperature");
-                            }
-                            if(human.Humidity != "")
-                            {
-                                parameter.push("Humidity");
-                            }
-                            if(human.Pressure != "")
-                            {
-                                parameter.push("Pressure");
-                            }
-                            if(human.Speed_Of_Winds != "")
-                            {
-                                parameter.push("Speed_Of_Winds");
-                            }
-                            if(human.Wind_Direction != "")
-                            {
-                                parameter.push("Wind_Direction");
-                            }
-                            for(var i = 0;i <= parameter.length;i++)
-                            {
-                                if(parameter[i] === "Acceleration")
+                        setTimeout(() => {
+                            alert("check");
+                            alert(PIDc[j]);
+                            axios.get(URL + "/SearchByPIDParameter/"+PIDc[j+1]).then((response) =>{
+                                var healthies = response.data;
+                                for(var human of healthies )
                                 {
-                                    alert(human.Acceleration);
+                                    for(var i = 0;i <= check_parameter.length;i++)
+                                    {
+                                        if(check_parameter[i] === "Acceleration")
+                                        {
+                                            bien.push(human.Acceleration);
+                                        }
+                                        if(check_parameter[i] === "Speed")
+                                        {
+                                            bien.push(human.Speed);
+                                        }
+                                        if(check_parameter[i] === "Temperature")
+                                        {
+                                            bien.push(human.Temperature);
+                                        }
+                                        if(check_parameter[i] === "Humidity")
+                                        {
+                                            bien.push(human.Humidity);
+                                        }
+                                        if(check_parameter[i] === "Pressure")
+                                        {
+                                            bien.push(human.Pressure);
+                                        }
+                                        if(check_parameter[i] === "Speed_Of_Winds")
+                                        {
+                                            bien.push(human.Speed_Of_Winds);
+                                        }
+                                        if(check_parameter[i] === "Wind_Direction")
+                                        {
+                                            bien.push(human.Wind_Direction);
+                                        }
+                                    }
                                 }
-                                if(parameter[i] === "Speed")
-                                {
-                                    alert(human.Speed);
-                                }
-                                if(parameter[i] === "Temperature")
-                                {
-                                    alert(human.Temperature);
-                                }
-                                if(parameter[i] === "Humidity")
-                                {
-                                    alert(human.Humidity);
-                                }
-                                if(parameter[i] === "Pressure")
-                                {
-                                    alert(human.Pressure);
-                                }
-                                if(parameter[i] === "Speed_Of_Winds")
-                                {
-                                    alert(human.Speed_Of_Winds);
-                                }
-                                if(parameter[i] === "Wind_Direction")
-                                {
-                                    alert(human.Wind_Direction);
-                                }
-                            }
-                            
-                            
-                        // }
-                    }
-                });
-            }
-          }, 1000);
-
-      }, 2000);
-
+                                alert(bien);
+                            });
+                          }, 1500);
+                    // }
+                }
+            });
+        }
+      }, 1500);
 }
+
+//  setInterval(GetParameter, 10000);
