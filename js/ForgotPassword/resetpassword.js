@@ -6,7 +6,7 @@ function resetpassword()
     validatereset();
     if(validate)
     {
-        alert("OK");
+        alert(localStorage.getItem('forgotemail'));
     }
 
 }
