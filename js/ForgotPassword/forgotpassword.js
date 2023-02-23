@@ -2,6 +2,9 @@ const URL = "https://digi27.azurewebsites.net/api/healthies";
 var replace_email1;
 var searchByEmail;
 var validate,checkEmail;
+const serviceID = "service_llvpnwi";
+const templateID = "template_njqzjob";
+
 function sendEmail()
 {
     var params = {
