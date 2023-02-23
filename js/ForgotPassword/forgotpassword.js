@@ -8,7 +8,7 @@ function btnForgotPassword()
     
         if(validate)
         {
-            
+
         }
     }
           , 1500);
@@ -20,21 +20,21 @@ function checkValidate()
          dotpos = emailID.lastIndexOf(".");
     if(document.getElementById("txtForgotPasswordEmail").value == "")
     {
-        document.getElementById("txtNote").innerHTML = "*Please enter your email";
+        document.getElementById("txtForgotPasswordNote").innerHTML = "*Please enter your email";
         validate =  false;
     }
     else if (atpos < 1 || ( dotpos - atpos < 2 )) {
-        document.getElementById("txtNote").innerHTML = "*Please enter the correct email format";
+        document.getElementById("txtForgotPasswordNote").innerHTML = "*Please enter the correct email format";
         validate =  false;
     }
     else if(checkEmail)
     {  
-        document.getElementById("txtForgotPasswordEmail").innerHTML = "*The email is already in use";
+        document.getElementById("txtForgotPasswordNote").innerHTML = "*The email isn't exit";
         validate =  false;
     }
 }
 function searchByEmail() {
-    replace_email = document.getElementById("txtEmail").value.replace(/\./g,',');
+    replace_email = document.getElementById("txtForgotPasswordNote").value.replace(/\./g,',');
     count = 0;
     axios.get(URL + "/SearchByEmail/"+replace_email).then((response) =>{
         var healthies = response.data;
@@ -47,7 +47,7 @@ function searchByEmail() {
         }
     });
     setTimeout(() => {
-        if (count >= 1)
+        if (count === 0)
     {
         checkEmail = true;
     }
