@@ -28,7 +28,7 @@ function btnForgotPassword()
             sendEmail();
             localStorage.setItem('forgotemail',replace_email1);
             setTimeout(() => {
-                window.location=".../html/forgotPasswordMess.html";
+                window.location="forgotPasswordMess.html";
             }
                   , 1000);
         }
