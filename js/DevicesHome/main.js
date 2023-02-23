@@ -1,9 +1,9 @@
 const URL = "https://digi27.azurewebsites.net/api/healthies";
 var email;
-var PID = [];
+var PIDc = [];
+var parameter = [];
 function check()
 {
-    alert("cuong");
     email = sessionStorage.getItem('email');
     axios.get(URL + "/SearchByEmail/"+email).then((response) =>{
         var healthies = response.data;
@@ -20,7 +20,7 @@ function check()
             sessionStorage.setItem('Purchase_Date', human.Purchase_Date);
             sessionStorage.setItem('Date', human.Date);
         }
-        alert(sessionStorage.getItem('Date'));
+        
     });
 
     setTimeout(() => {
@@ -29,32 +29,96 @@ function check()
             var i =0;
             for(var human of healthies )
             {
-                PID[i] =  human.PID;
-                
+                PIDc[i] =  human.PID;
                 i++;
             }
-            alert(PID);
-            
         });
 
         setTimeout(() => {
-            for(var j = (PID.length - 1);j >= 0 ;j--)
+            for(var j = (PIDc.length - 1);j >= 0 ;j--)
             {
-                alert(PID[j]);
-                axios.get(URL + "/SearchByPIDProduct/"+PID[j]).then((response) =>{
+                var count = 0;
+                var parameter = [];   
+                
+                axios.get(URL + "/SearchByPIDProduct/"+PIDc[j]).then((response) =>{
                     var healthies = response.data;
-                    var p = 0;
+
                     for(var human of healthies )
                     {
-                        if(PID[j] === human.PID)
-                        {
-                            alert(human.PID+human.Name+human.Speed);
-                        }
+                        // if(human.Is_read_file === "y")
+                        // {
+                        //     //get file về đọc
+                        // }
+                        // if(human.Is_read_file === "n")
+                        // {
+                        //    //đọc trực tiếp 
+                            if(human.Acceleration != "")
+                            {
+                                parameter.push("Acceleration");
+                            }
+                            if(human.Speed != "")
+                            {
+                                parameter.push("Speed");
+                            }
+                            if(human.Temperature != "")
+                            {
+                                parameter.push("Temperature");
+                            }
+                            if(human.Humidity != "")
+                            {
+                                parameter.push("Humidity");
+                            }
+                            if(human.Pressure != "")
+                            {
+                                parameter.push("Pressure");
+                            }
+                            if(human.Speed_Of_Winds != "")
+                            {
+                                parameter.push("Speed_Of_Winds");
+                            }
+                            if(human.Wind_Direction != "")
+                            {
+                                parameter.push("Wind_Direction");
+                            }
+                            for(var i = 0;i <= parameter.length;i++)
+                            {
+                                if(parameter[i] === "Acceleration")
+                                {
+                                    alert(human.Acceleration);
+                                }
+                                if(parameter[i] === "Speed")
+                                {
+                                    alert(human.Speed);
+                                }
+                                if(parameter[i] === "Temperature")
+                                {
+                                    alert(human.Temperature);
+                                }
+                                if(parameter[i] === "Humidity")
+                                {
+                                    alert(human.Humidity);
+                                }
+                                if(parameter[i] === "Pressure")
+                                {
+                                    alert(human.Pressure);
+                                }
+                                if(parameter[i] === "Speed_Of_Winds")
+                                {
+                                    alert(human.Speed_Of_Winds);
+                                }
+                                if(parameter[i] === "Wind_Direction")
+                                {
+                                    alert(human.Wind_Direction);
+                                }
+                            }
+                            
+                            
+                        // }
                     }
                 });
             }
           }, 1000);
 
-      }, 800);
+      }, 2000);
 
 }

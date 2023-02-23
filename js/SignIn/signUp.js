@@ -141,9 +141,6 @@ function checkValidate() {
     var emailID = document.getElementById("txtEmail").value;
         atpos = emailID.indexOf("@");
          dotpos = emailID.lastIndexOf(".");
-        //  var keyword = document.getElementById("txtEmail").value;
-        //  let checkEmail = searchByEmail();
-        // var validate_pasword = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/im;
         var validate_pasword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
          const usr_input = document.getElementById("captcha-form").value;
     setTimeout(() => {
