@@ -42,19 +42,19 @@ function checkValidate()
 }
 function searchByEmail() {
     replace_email = document.getElementById("txtForgotPasswordEmail").value.replace(/\./g,',');
-    count = 0;
+    var check = false;
     axios.get(URL + "/SearchByEmail/"+replace_email).then((response) =>{
         var healthies = response.data;
         for(var human of healthies )
         {
-            if(human.Email === replace_email)
+            if(human.Email != "")
             {
-                count = count + 1;
+                check = true;
             }
         }
     });
     setTimeout(() => {
-        if (count === 0)
+        if (check)
     {
         checkEmail = true;
     }
