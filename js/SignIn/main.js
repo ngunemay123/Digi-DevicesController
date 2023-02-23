@@ -2,7 +2,7 @@ const URL = "https://digi27.azurewebsites.net/api/healthies";
 var replace_email;
 function btnSignIn_Click()
 {
-    localStorage.clear();
+    
     searchByEmail();
 }
 function searchByEmail() {
@@ -16,6 +16,7 @@ function searchByEmail() {
             {
                 if(human.Pass === document.getElementById("txtSignInPassword").value)
                 {
+                    localStorage.clear();
                     clear();
                     sessionStorage.setItem('email', replace_email);
                     window.location.href = "../html/devicesHome.html ";
