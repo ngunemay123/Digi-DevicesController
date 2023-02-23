@@ -1,4 +1,6 @@
+const URL = "https://digi27.azurewebsites.net/api/healthies";
 
+var searchByEmail;
 var validate,checkEmail;
 function btnForgotPassword()
 {
@@ -8,7 +10,8 @@ function btnForgotPassword()
     
         if(validate)
         {
-
+            document.getElementById("txtForgotPasswordNote").innerHTML = "";
+            alert("thành cong ");
         }
     }
           , 1500);
@@ -32,9 +35,13 @@ function checkValidate()
         document.getElementById("txtForgotPasswordNote").innerHTML = "*The email isn't exit";
         validate =  false;
     }
+    else
+    {
+        validate =  true;
+    }
 }
 function searchByEmail() {
-    replace_email = document.getElementById("txtForgotPasswordNote").value.replace(/\./g,',');
+    replace_email = document.getElementById("txtForgotPasswordEmail").value.replace(/\./g,',');
     count = 0;
     axios.get(URL + "/SearchByEmail/"+replace_email).then((response) =>{
         var healthies = response.data;
