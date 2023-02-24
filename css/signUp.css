@@ -82,6 +82,21 @@
     outline: none;
 }
 
+.showPass{
+    width: 0px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: rgb(167, 48, 69);
+    /* border-radius: 50px; */
+    margin-left: -40px;
+    background-color: rgb(255, 255, 255);
+}
+
+.showPass:hover{
+    transform: scale(1.05);
+}
+
 .signUp-title img{
     height: 420px;
     width: 410px;
@@ -110,7 +125,7 @@
 
 
 .signUp-title button:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .signUp-title form>table .captcha{
@@ -183,6 +198,6 @@
 }
 
 .signUp-title form .btn-siup:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
