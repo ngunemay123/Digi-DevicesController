@@ -82,7 +82,6 @@ function RandomOTP() {
 		uniquechar += randomchar.charAt(
 			Math.random() * randomchar.length)
 	}
-    
 	real_email = uniquechar;
 }
 function generateUUID() { // Public Domain/MIT

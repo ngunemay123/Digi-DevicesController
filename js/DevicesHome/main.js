@@ -8,7 +8,6 @@ function check()
     email = sessionStorage.getItem('email');
     axios.get(URL + "/SearchByEmail/tr6r20@gmail,com").then((response) =>{
         var healthies = response.data;
-
         for(var human of healthies )
         {
             sessionStorage.setItem('UID', human.UID);
@@ -21,9 +20,7 @@ function check()
             sessionStorage.setItem('Purchase_Date', human.Purchase_Date);
             sessionStorage.setItem('Date', human.Date);
         }
-
     });
-
     setTimeout(() => {
         GetParameter();
       }, 2000);
@@ -39,7 +36,6 @@ function GetParameter()
             PIDc[i] =  human.PID;
             i++;
         }
-        
     });
 
     setTimeout(() => {
@@ -50,7 +46,6 @@ function GetParameter()
             var bien = []; 
             axios.get(URL + "/SearchByPIDProduct/"+PIDc[j]).then((response) =>{
                 var healthies = response.data;
-
                 for(var human of healthies )
                 {
                     // if(human.Is_read_file === "y")
@@ -88,8 +83,6 @@ function GetParameter()
                         {
                             check_parameter.push("Wind_Direction");
                         }
-        
-
                         setTimeout(() => {
                            
                             axios.get(URL + "/SearchByPIDParameter/"+PIDc[j+1]).then((response) =>{
