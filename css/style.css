@@ -73,6 +73,28 @@ header form input{
 }
 
 /* --------------------------------------------- */
+/* -------------- Content header---------------- */
+/* --------------------------------------------- */
+
+.header img{
+    /* background-color: aquamarine; */
+    display: block;
+    width: 1200px;
+    height: 600px;
+    border-radius: 20px;
+    display: inline;
+    margin: auto;
+}
+
+.header h5,p {
+    color: black;
+}
+
+.border-bottom ul{
+    margin-left: 20px;
+}
+
+/* --------------------------------------------- */
 /* ------------------- Content ----------------- */
 /* --------------------------------------------- */
 

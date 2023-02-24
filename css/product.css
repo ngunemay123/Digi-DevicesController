@@ -1,0 +1,33 @@
+/* .product-body{
+
+} */
+
+.cate-product{
+    background-color: rgb(240, 240, 240);
+}
+
+.cate{
+    width: 1250px;
+}
+
+.cate-content{
+    padding: 20px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.cate-content .cate-left{
+    background-color: white;
+    float: left;
+    width: 280px;
+    margin-right: 10px;
+}
+
+.cate-content .cate-right{
+    margin-left: 290px;
+    
+}
+
+.cate-content .cate-right h4{
+    background-color: white;
+}
