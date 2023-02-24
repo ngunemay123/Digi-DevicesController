@@ -16,16 +16,60 @@
     width: 100%;
 }
 
+.hr{
+    width:"60%";
+    size:"10px"; 
+    Text-align:"center";
+}
+
+/* --------------------------------------------- */
+/* ----------------- Cate left ----------------- */
+/* --------------------------------------------- */
+
 .cate-content .cate-left{
     background-color: white;
+    display: block;
+    position: relative;
     float: left;
     width: 280px;
     margin-right: 10px;
 }
 
+.cate-content .cate-left h4{
+    padding: 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+
+.cate-content .cate-left ul{
+    margin-top: 20px;
+}
+
+.cate-content .cate-left ul>li{
+    list-style: none;
+    font-size: 20px;
+}
+
+.cate-content .cate-left ul>li i{
+    font-size: 16px;
+}
+
+.cate-content .cate-left ul>li a{
+    text-decoration: none;
+    color: black;
+}
+.cate-content .cate-left ul>li a:hover{
+    color: #ED2024;
+}
+
+/* --------------------------------------------- */
+/* ----------------- Cate tight ---------------- */
+/* --------------------------------------------- */
+
 .cate-content .cate-right{
     margin-left: 290px;
-    
 }
 
 .cate-content .cate-right h4{
