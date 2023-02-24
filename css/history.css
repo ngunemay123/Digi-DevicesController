@@ -1,206 +1,242 @@
-*{
-    margin: 0;
-    padding: 0;
+@import "https://code.highcharts.com/css/highcharts.css";
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-/* .dataDivices-section .container{
-    background-color: #f0f0f0;
-    padding: 30px;
-    border-radius: 20px;
+.dataDivices-section {
+  background-color: #ffffff;
 }
 
-.dataDivices-section{
-    margin: auto;
+.dataDivices-section h2 {
+  text-align: center;
+  color: #5a5a5a;
+  margin-bottom: 80px;
+  font-style: italic;
 }
 
-.dataDivices-section .container .option .selc{
-    
-}
-
-.dataDivices-section .container{
-    justify-content: center;
-}
-
-.dataDivices-section .container .option{
-    display: flex;
-    justify-content: center;
-}
-
-select{
-    font-weight: bold;
-}
-
-.dataDivices-section .container .option select{
-    width: auto;
-    background-color: #f0f0f0;
-    border: none;
-    outline: none;
-    padding: 5px;
-} */
-
-
-/* .dataDivices-section img{
-    height: 250px;
-    width: 400px;
-    border: solid rgb(255, 229, 229) 2px;
-    border-radius: 25px;
-    display: inline;
-} */
-
-
-
-/* .dataDivices-section .container{
-    justify-content: center;
-}
-
-.dataDivices-section p{
-    margin-top: 10px;
-}
-
-.dataDivices-section img{
-    margin-bottom: 30px;
-} */
-
-.dataDivices-section{
-    background-color: #ffffff;
-}
-
-.dataDivices-section h2{
-    text-align: center;
-    color: #5a5a5a;
-    margin-bottom: 80px;
-    font-style: italic;
-}
-
-.row{
-    margin-bottom: 20px;
+.row {
+  margin-bottom: 20px;
 }
 
 .dataDivices-section .container-general {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.dataDivices-section .container-general .wrap{
-    width: fit-content;
-    background-color: rgba(230, 230, 230);
-    border-radius: 20px;
-    padding: 20px 20px 20px 20px
+.dataDivices-section .container-general .wrap {
+  width: fit-content;
+  background-color: rgba(230, 230, 230);
+  border-radius: 20px;
+  padding: 20px 20px 20px 20px;
 }
 
-.dataDivices-section .container-general .wrap select{
-    background-color: rgb(243, 243, 243);
-    text-align: center;
-    width: fit-content;
-    border: none;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    padding: 1px 5px 10px 5px;
-    margin-left: 90px;
-    outline: none;
+.dataDivices-section .container-general .wrap select {
+  background-color: rgb(243, 243, 243);
+  text-align: center;
+  width: fit-content;
+  border: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 1px 5px 10px 5px;
+  margin-left: 90px;
+  outline: none;
 }
 
 /* ----------------------------------------------------- */
 /* ----------------- DEVICE INFORMATION ---------------- */
 /* ----------------------------------------------------- */
 
-.dataDivices-section .container .detail-info{
-    background-color: rgb(243, 243, 243);
-    padding: 20px;
-    margin: 0px 5px 5px 5px;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 5px 10px 10px rgb(165, 165, 165);
+.dataDivices-section .container .detail-info {
+  background-color: rgb(243, 243, 243);
+  padding: 20px;
+  margin: 0px 5px 5px 5px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 5px 10px 10px rgb(165, 165, 165);
 }
 
-.dataDivices-section .container .detail-info h3{
-    text-align: center;
-    margin-top: 5px;
-    font-style: italic;
-    color: #C45166;
+.dataDivices-section .container .detail-info h3 {
+  text-align: center;
+  margin-top: 5px;
+  font-style: italic;
+  color: #c45166;
 }
 
-.dataDivices-section .container .detail-info form{
-    margin-top: 50px;
+.dataDivices-section .container .detail-info form {
+  margin-top: 50px;
 }
 
-.dataDivices-section .container .detail-info form table{
-    height: 150px;
+.dataDivices-section .container .detail-info form table {
+  height: 150px;
 }
 
-.dataDivices-section .container .detail-info form>table .tittle{
-    /* text-align: right; */
-    width: 140px;
+.dataDivices-section .container .detail-info form > table .tittle {
+  /* text-align: right; */
+  width: 140px;
 }
 
-.dataDivices-section .container .detail-info form>table .fill{
-   padding-left: 10px;
+.dataDivices-section .container .detail-info form > table .fill {
+  padding-left: 10px;
 }
 
-.dataDivices-section .container .detail-info .info .note{
-   margin-top: 20px;
+.dataDivices-section .container .detail-info .info .note {
+  margin-top: 20px;
 }
 
-.dataDivices-section .container .detail-info form>table tr,td{
-    font-size: 23px;
+.dataDivices-section .container .detail-info form > table tr,
+td {
+  font-size: 23px;
 }
 
-.dataDivices-section .container .detail-info .info .note .tittleNote{
-    width: fit-content;
-    padding: 0px 15px;
-    margin-left: 20px;
-    border: solid 3px #333;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-} 
+.dataDivices-section .container .detail-info .info .note .tittleNote {
+  width: fit-content;
+  padding: 0px 15px;
+  margin-left: 20px;
+  border: solid 3px #333;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
-.dataDivices-section .container .detail-info .info .note .infoNote{
-    padding: 8px;
-    border: solid #333 3px;
-    border-radius: 20px;
-    text-align: justify;
-} 
+.dataDivices-section .container .detail-info .info .note .infoNote {
+  padding: 8px;
+  border: solid #333 3px;
+  border-radius: 20px;
+  text-align: justify;
+}
 
 /* ----------------------------------------------------- */
 /* ------------------------ GRAPH ---------------------- */
 /* ----------------------------------------------------- */
 
-/* .dataDivices-section .container .graph-data{
-    padding: 20px;
-    background-color: rgb(243, 243, 243);
-    margin-top: 10px;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 5px 10px 10px rgb(165, 165, 165);
+.graph-data h3 {
+  width: fit-content;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  margin: 20px 0 0 0;
+  padding: 5px;
+  font-style: italic;
+  color: #c45166;
 }
 
-.dataDivices-section .container .graph-data h3{
-    text-align: center;
-    margin-top: 5px;
-    font-style: italic;
-    color: #C45166;
-} */
+.container-gr .graph-data .highcharts-figure,
+.container-gr .highcharts-data-table table {
+  min-width: 360px;
+  max-width: 660px;
+  margin: 1em auto;
+}
 
-.graph-data h3{
-    width: fit-content;
-    background-color: white;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    text-align: center;
-    margin: 20px 0 0 0;
-    padding: 5px;
-    font-style: italic;
-    color: #C45166;
-} 
+.container-gr .graph-data .highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #ebebeb;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
 
-.graph-data .highcharts-figure,
-.highcharts-data-table table {
-    min-width: 360px;
-    max-width: 660px;
+.container-gr .graph-data .highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.container-gr .graph-data .highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.container-gr .highcharts-data-table td,
+.container-gr .highcharts-data-table th,
+.container-gr .highcharts-data-table caption {
+  padding: 0.5em;
+  color: wheat;
+}
+
+.container-gr .graph-data .highcharts-data-table thead tr,
+.container-gr .highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.container-gr .graph-data .highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+
+/* ----------------------------------------------------- */
+/* --------------------- PARAMETER --------------------- */
+/* ----------------------------------------------------- */
+
+.dataDivices-section .container .detail-parameter {
+  background-color: rgb(243, 243, 243);
+  padding: 20px;
+  margin: 5px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 5px 10px 10px rgb(165, 165, 165);
+}
+
+.dataDivices-section .container .detail-parameter h3 {
+  text-align: center;
+  margin-top: 5px;
+  font-style: italic;
+  color: #c45151;
+}
+
+.dataDivices-section .container .detail-parameter form {
+  margin-top: 30px;
+}
+
+.dataDivices-section .container .detail-parameter form > table {
+  height: 350px;
+}
+
+.dataDivices-section .container .detail-parameter form > table tr,
+td {
+  font-size: 23px;
+}
+
+.dataDivices-section .container .detail-parameter form > table .tittle {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.dataDivices-section .container .detail-parameter form > table .fill {
+  padding-left: 16px;
+}
+
+/* ----------------------------------------------------- */
+/* -------------------- CIRCLE GRAPH ------------------- */
+/* ----------------------------------------------------- */
+
+.dataDivices-section .circle-graph {
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.container-circle-graph .highcharts-pie-series .highcharts-point {
+    stroke: #ede;
+    stroke-width: 2px;
+}
+
+.container-circle-graph .highcharts-pie-series .highcharts-data-label-connector {
+    stroke: silver;
+    stroke-dasharray: 2, 2;
+    stroke-width: 2px;
+}
+
+.container-circle-graph .highcharts-figure,
+.container-circle-graph .highcharts-data-table table {
+    min-width: 320px;
+    max-width: 600px;
     margin: 1em auto;
 }
 
-.graph-data .highcharts-data-table table {
+.container-circle-graph .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
     border: 1px solid #ebebeb;
@@ -210,72 +246,28 @@ select{
     max-width: 500px;
 }
 
-.graph-data .highcharts-data-table caption {
+.container-circle-graph .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
     color: #555;
 }
 
-.graph-data .highcharts-data-table th {
+.container-circle-graph .highcharts-data-table th {
     font-weight: 600;
     padding: 0.5em;
 }
 
-.highcharts-data-table td,
-.highcharts-data-table th,
-.highcharts-data-table caption {
+.container-circle-graph .highcharts-data-table td,
+.container-circle-graph .highcharts-data-table th,
+.container-circle-graph .highcharts-data-table caption {
     padding: 0.5em;
-    color: wheat;
 }
 
-.graph-data .highcharts-data-table thead tr,
-.highcharts-data-table tr:nth-child(even) {
+.container-circle-graph .highcharts-data-table thead tr,
+.container-circle-graph .highcharts-data-table tr:nth-child(even) {
     background: #f8f8f8;
 }
 
-.graph-data .highcharts-data-table tr:hover {
+.container-circle-graph .highcharts-data-table tr:hover {
     background: #f1f7ff;
-}
-
-
-/* ----------------------------------------------------- */
-/* --------------------- PARAMETER --------------------- */
-/* ----------------------------------------------------- */
-
-.dataDivices-section .container .detail-parameter{
-    background-color: rgb(243, 243, 243);
-    padding: 20px;
-    margin: 5px;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 5px 10px 10px rgb(165, 165, 165);
-}
-
-.dataDivices-section .container .detail-parameter h3{
-    text-align: center;
-    margin-top: 5px;
-    font-style: italic;
-    color: #c45151;
-}
-
-.dataDivices-section .container .detail-parameter form{
-    margin-top: 30px;
-}
-
-.dataDivices-section .container .detail-parameter form>table {
-    height: 350px;
-}
-
-.dataDivices-section .container .detail-parameter form>table tr,td{
-    font-size: 23px;
-}
-
-.dataDivices-section .container .detail-parameter form>table .tittle{
-    text-align: left;
-    padding-left: 20px;
-    
-}
-
-.dataDivices-section .container .detail-parameter form>table .fill{
-    padding-left: 16px;
 }
