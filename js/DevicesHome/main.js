@@ -6,7 +6,7 @@ var check_parameter = [];
 async function check()
 {		                        
     email = sessionStorage.getItem('email');
-    await axios.get(URL + "/SearchByEmail/tr6r20@gmail,com").then((response) =>{
+    await axios.get(URL + "/SearchByEmail/"+email).then((response) =>{
         var healthies = response.data;
 
         for(var human of healthies )
