@@ -19,6 +19,10 @@
     letter-spacing: 5px;
 }
 
+b{
+    color: black;
+}
+
 .tableData .container{
     background: rgba(235, 235, 235, 0.4);
     padding: 30px;
@@ -69,7 +73,7 @@
 }
 
 .tableData tr>td{
-    width: 150px;
+    width: 250px;
     height: 20px;
     text-align: center;
 }
