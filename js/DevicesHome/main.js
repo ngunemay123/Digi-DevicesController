@@ -3,181 +3,163 @@ var email;
 var PIDc = [];
 var check_parameter = [];
 
-async function check()
-{		                        
-    email = sessionStorage.getItem('email');
-    await axios.get(URL + "/SearchByEmail/tr6r20@gmail,com").then((response) =>{
-        var healthies = response.data;
+async function check() {
+  email = sessionStorage.getItem("email");
+  await axios.get(URL + "/SearchByEmail/tr6r20@gmail,com").then((response) => {
+    var healthies = response.data;
 
-        for(var human of healthies )
-        {
-            sessionStorage.setItem('UID', human.UID);
-            sessionStorage.setItem('Nation', human.Nation);
-            sessionStorage.setItem('Language', human.Language);
-            sessionStorage.setItem('Hour_nose', human.Hour_nose);
-            sessionStorage.setItem('UID_Main_Account', human.UID_Main_Account);
-            sessionStorage.setItem('Is_Beneficiary_Account', human.Is_Beneficiary_Account);
-            sessionStorage.setItem('Status', human.Status);
-            sessionStorage.setItem('Purchase_Date', human.Purchase_Date);
-            sessionStorage.setItem('Date', human.Date);
-        }
-       
-    });
-    GetParameter();
-    // setTimeout(() => {
-    //     GetParameter();
-    //   }, 1);
-
-}
-async function GetParameter()
-{
-    await axios.get(URL + "/SearchByUIDOwner/"+sessionStorage.getItem('UID')).then((response) =>{
-        var healthies = response.data;
-        var i =0;
-        for(var human of healthies )
-        {
-            PIDc[i] =  human.PID;
-            i++;
-        }
-        
-    });
-
-    // setTimeout(async () => {
-        for(var j = (PIDc.length - 1);j >= 0 ;)
-        {
-            var bien = []; 
-            j  = j -1 ;
-            await axios.get(URL + "/SearchByPIDProduct/"+PIDc[j+1]).then(async (response) =>{
-                var healthies = response.data;   
-                for(var human of healthies )
-                {
-                    if(human.Is_read_file === "Y")
-                    {
-                        if(PIDc[j+1] === human.PID )
-                        {
-                            
-                            break;
-                        }
-                    }
-                    else if(human.Is_read_file === "N")
-                    {
-                    //    //đọc trực tiếp 
-                            
-                            if(PIDc[j+1] === human.PID)
-                            {
-                                // alert(PIDc[j+1] + human.PID + "N");
-                                if(human.Acceleration === "Y")
-                                {
-                                    check_parameter.push("Acceleration");
-                                }
-                                if(human.Speed === "Y")
-                                {
-                                    check_parameter.push("Speed");
-                                }
-                                if(human.Temperature === "Y")
-                                {
-                                    check_parameter.push("Temperature");
-                                }
-                                if(human.Humidity === "Y")
-                                {
-                                    check_parameter.push("Humidity");
-                                }
-                                if(human.Pressure === "Y")
-                                {
-                                    check_parameter.push("Pressure");
-                                }
-                                if(human.Speed_Of_Winds === "Y")
-                                {
-                                    check_parameter.push("Speed_Of_Winds");
-                                }
-                                if(human.Wind_Direction === "Y")
-                                {
-                                    check_parameter.push("Wind_Direction");
-                                }
-                                
-                                await axios.get(URL + "/SearchByPIDParameterDR/"+PIDc[j+1]).then((response) =>{
-                                var healthies = response.data;
-                                for(var human1 of healthies )
-                                {
-                                    
-                                    if(PIDc[j+1] === human1.PID)
-                                    {
-                                        // var date = new Date();
-                                        // let slip_Current_Time = human1.Current_Time.split(" ");
-                                        // let slip_Current_Time_date = slip_Current_Time[0].split("/");
-                                        // let slip_Current_Time_time = slip_Current_Time[1].split(":");
-            
-                                        // if(slip_Current_Time_date[0] === "6" 
-                                        //     && slip_Current_Time_date[1] === "12"
-                                        //     && slip_Current_Time_date[2] === "2015" ) 
-                                        // {
-                                            
-                        
-                                            for(var i = 0;i < check_parameter.length;i++)
-                                            {
-                                                if(check_parameter[i] === "Acceleration")
-                                                {
-                                                    bien.push(human1.Acceleration);
-                                                }
-                                                if(check_parameter[i] === "Speed")
-                                                {
-                                                    bien.push(human1.Speed);
-                                                }
-                                                if(check_parameter[i] === "Temperature")
-                                                {
-                                                    bien.push(human1.Temperature);
-                                                }
-                                                if(check_parameter[i] === "Humidity")
-                                                {
-                                                    bien.push(human1.Humidity);
-                                                }
-                                                if(check_parameter[i] === "Pressure")
-                                                {
-                                                    bien.push(human1.Pressure);
-                                                }
-                                                if(check_parameter[i] === "Speed_Of_Winds")
-                                                {
-                                                    bien.push(human1.Speed_Of_Winds);
-                                                }
-                                                if(check_parameter[i] === "Wind_Direction")
-                                                {
-                                                    bien.push(human1.Wind_Direction);
-                                                }
-                                            }
-                                            check_parameter.length = 0;
-                                            break;
-                                        // }
-                                    }
-                                }
-                            });
-                        }
-                    }
-                    //code here
-                    MakeTable();
-                }
-            })
-        }
-}
-function MakeTable()
-{
-    var container = document.getElementById("cuong");
-var countRow = 4;
-var countColumn = 6;
-var tagTable = document.createElement("table");
-tagTable.border = 1;
-    for (var i = 0; i < countRow; i++) {
-        var tagRow = document.createElement("tr");
-        tagTable.appendChild(tagRow);
-                
-        for(var j = 0; j < countColumn; j++) {
-          var tagColumn = document.createElement("td");
-                  var textNode = document.createTextNode(i + " - " + j);
-                  tagColumn.appendChild(textNode);
-                  tagRow.appendChild(tagColumn);
-        }
+    for (var human of healthies) {
+      sessionStorage.setItem("UID", human.UID);
+      sessionStorage.setItem("Nation", human.Nation);
+      sessionStorage.setItem("Language", human.Language);
+      sessionStorage.setItem("Hour_nose", human.Hour_nose);
+      sessionStorage.setItem("UID_Main_Account", human.UID_Main_Account);
+      sessionStorage.setItem(
+        "Is_Beneficiary_Account",
+        human.Is_Beneficiary_Account
+      );
+      sessionStorage.setItem("Status", human.Status);
+      sessionStorage.setItem("Purchase_Date", human.Purchase_Date);
+      sessionStorage.setItem("Date", human.Date);
     }
+  });
+  GetParameter();
+  // setTimeout(() => {
+  //     GetParameter();
+  //   }, 1);
+}
+async function GetParameter() {
+  await axios
+    .get(URL + "/SearchByUIDOwner/" + sessionStorage.getItem("UID"))
+    .then((response) => {
+      var healthies = response.data;
+      var i = 0;
+      for (var human of healthies) {
+        PIDc[i] = human.PID;
+        i++;
+      }
+    });
 
-    container.appendChild(tagTable);
+  // setTimeout(async () => {
+  for (var j = PIDc.length - 1; j >= 0; ) {
+    var bien = [];
+    j = j - 1;
+    await axios
+      .get(URL + "/SearchByPIDProduct/" + PIDc[j + 1])
+      .then(async (response) => {
+        var healthies = response.data;
+        for (var human of healthies) {
+          if (human.Is_read_file === "Y") {
+            if (PIDc[j + 1] === human.PID) {
+              break;
+            }
+          } else if (human.Is_read_file === "N") {
+            //    //đọc trực tiếp
+
+            if (PIDc[j + 1] === human.PID) {
+              // alert(PIDc[j+1] + human.PID + "N");
+              if (human.Acceleration === "Y") {
+                check_parameter.push("Acceleration");
+              }
+              if (human.Speed === "Y") {
+                check_parameter.push("Speed");
+              }
+              if (human.Temperature === "Y") {
+                check_parameter.push("Temperature");
+              }
+              if (human.Humidity === "Y") {
+                check_parameter.push("Humidity");
+              }
+              if (human.Pressure === "Y") {
+                check_parameter.push("Pressure");
+              }
+              if (human.Speed_Of_Winds === "Y") {
+                check_parameter.push("Speed_Of_Winds");
+              }
+              if (human.Wind_Direction === "Y") {
+                check_parameter.push("Wind_Direction");
+              }
+
+              await axios
+                .get(URL + "/SearchByPIDParameterDR/" + PIDc[j + 1])
+                .then((response) => {
+                  var healthies = response.data;
+                  for (var human1 of healthies) {
+                    if (PIDc[j + 1] === human1.PID) {
+                      // var date = new Date();
+                      // let slip_Current_Time = human1.Current_Time.split(" ");
+                      // let slip_Current_Time_date = slip_Current_Time[0].split("/");
+                      // let slip_Current_Time_time = slip_Current_Time[1].split(":");
+
+                      // if(slip_Current_Time_date[0] === "6"
+                      //     && slip_Current_Time_date[1] === "12"
+                      //     && slip_Current_Time_date[2] === "2015" )
+                      // {
+
+                      for (var i = 0; i < check_parameter.length; i++) {
+                        if (check_parameter[i] === "Acceleration") {
+                          bien.push(human1.Acceleration);
+                        }
+                        if (check_parameter[i] === "Speed") {
+                          bien.push(human1.Speed);
+                        }
+                        if (check_parameter[i] === "Temperature") {
+                          bien.push(human1.Temperature);
+                        }
+                        if (check_parameter[i] === "Humidity") {
+                          bien.push(human1.Humidity);
+                        }
+                        if (check_parameter[i] === "Pressure") {
+                          bien.push(human1.Pressure);
+                        }
+                        if (check_parameter[i] === "Speed_Of_Winds") {
+                          bien.push(human1.Speed_Of_Winds);
+                        }
+                        if (check_parameter[i] === "Wind_Direction") {
+                          bien.push(human1.Wind_Direction);
+                        }
+                      }
+                      check_parameter.length = 0;
+                      break;
+                      // }
+                    }
+                  }
+                });
+            }
+          }
+          //code here
+          MakeTable();
+        }
+      });
+  }
+}
+function MakeTable() {
+  var container = document.getElementById("c");
+  var countRow = 6;
+  var countColumn = 6;
+  var tagTable = document.createElement("cuongtr");
+  // tagTable.style.width=150;
+  // tagTable.style.height=20;
+  // tagTable.style.textAlign="center";
+  // tagTable.style.border="solid rgb(179, 92, 92) 2px";
+  tagTable.border = 1;
+  for (var i = 0; i < countRow; i++) {
+    var tagRow = document.createElement("tr");
+    tagTable.appendChild(tagRow);
+
+    for (var j = 0; j < countColumn; j++) {
+      var tagColumn = document.createElement("td");
+    //   tagColumn.style.width = 150;
+    //   tagColumn.style.height = 20;
+    //   tagColumn.style.textAlign = "center";
+    //   tagColumn.style.border = "solid rgb(179, 92, 92) 2px";
+      var textNode = document.createTextNode(i + " - " + j);
+      tagColumn.appendChild(textNode);
+      tagRow.appendChild(tagColumn);
+    }
+  }
+
+  container.appendChild(tagTable);
 }
 
 //  setInterval(GetParameter, 10000);
