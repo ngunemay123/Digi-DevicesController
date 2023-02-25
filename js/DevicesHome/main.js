@@ -2,11 +2,11 @@ const URL = "https://digi27.azurewebsites.net/api/healthies";
 var email;
 var PIDc = [];
 var check_parameter = [];
-
+var bien = [];
 async function check()
 {		                        
     email = sessionStorage.getItem('email');
-    await axios.get(URL + "/SearchByEmail/"+email).then((response) =>{
+    await axios.get(URL + "/SearchByEmail/tr6r20@gmail,com").then((response) =>{
         var healthies = response.data;
 
         for(var human of healthies )
@@ -45,7 +45,8 @@ async function GetParameter()
     // setTimeout(async () => {
         for(var j = (PIDc.length - 1);j >= 0 ;)
         {
-            var bien = []; 
+            check_parameter.length = 0;
+            bien.length = 0;
             j  = j -1 ;
             await axios.get(URL + "/SearchByPIDProduct/"+PIDc[j+1]).then(async (response) =>{
                 var healthies = response.data;   
@@ -65,6 +66,9 @@ async function GetParameter()
                             
                             if(PIDc[j+1] === human.PID)
                             {
+                                check_parameter.push(human.PID);
+                                check_parameter.push(human.PName);
+                                check_parameter.push("HCM");
                                 // alert(PIDc[j+1] + human.PID + "N");
                                 if(human.Acceleration === "Y")
                                 {
@@ -102,11 +106,12 @@ async function GetParameter()
                                     
                                     if(PIDc[j+1] === human1.PID)
                                     {
-                                        // var date = new Date();
-                                        // let slip_Current_Time = human1.Current_Time.split(" ");
+                                        var date = new Date();
+                                        let slip_Current_Time = human1.Current_Time.split(" ");
                                         // let slip_Current_Time_date = slip_Current_Time[0].split("/");
                                         // let slip_Current_Time_time = slip_Current_Time[1].split(":");
-            
+                                        check_parameter.push(slip_Current_Time[0]);
+                                        check_parameter.push(slip_Current_Time[1]+" "+slip_Current_Time[2]);
                                         // if(slip_Current_Time_date[0] === "6" 
                                         //     && slip_Current_Time_date[1] === "12"
                                         //     && slip_Current_Time_date[2] === "2015" ) 
@@ -161,17 +166,25 @@ async function GetParameter()
 function MakeTable()
 {
     var container = document.getElementById("cuong");
-var countRow = 4;
-var countColumn = 6;
-var tagTable = document.createElement("table");
-tagTable.border = 1;
+    var countRow = 4;
+    var countColumn = 7;
+    var tagTable = document.createElement("table");
+    tagTable.style.border = 1;
+    tagTable.style.width = 100;
+    tagTable.style.height = 20 ;
+   
+    tagTable.style.textAlign = "center";
+
     for (var i = 0; i < countRow; i++) {
         var tagRow = document.createElement("tr");
+        tagRow.style.height = "20px"
         tagTable.appendChild(tagRow);
                 
         for(var j = 0; j < countColumn; j++) {
           var tagColumn = document.createElement("td");
+          tagColumn.style.width = "250px"
                   var textNode = document.createTextNode(i + " - " + j);
+                  ;
                   tagColumn.appendChild(textNode);
                   tagRow.appendChild(tagColumn);
         }
@@ -179,5 +192,8 @@ tagTable.border = 1;
 
     container.appendChild(tagTable);
 }
-
+function ResetArr()
+{
+    
+}
 //  setInterval(GetParameter, 10000);
