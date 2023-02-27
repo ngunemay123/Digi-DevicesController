@@ -4,8 +4,15 @@ var PIDc = [];
 var bang = [];
 var count_bold = 0;
 var count = 0;
+var count_button = 0;
 var test ;
 var bar = ["ID","Device","Location","Date","Time","Parameter","Details"];
+
+
+var btn = document.createElement('button');
+btn.type = 'button';
+   
+
 
 async function check()
 {		                        
@@ -35,6 +42,7 @@ async function check()
 }
 async function GetParameter()
 {
+     bang.length = 0;
     await axios.get(URL + "/SearchByUIDOwner/"+sessionStorage.getItem('UID')).then((response) =>{
         var healthies = response.data;
         var i =0;
@@ -168,13 +176,13 @@ async function GetParameter()
                     bien.reverse();
                     check_parameter.reverse();
                     bien_parameter.push(bien[0]);
-                    bien_parameter.push("nut");
                     
                     bang.push(bien_parameter);
                     bang.push(check_parameter);
                     bang.push(bien);
                     if (test === PIDc.length - 1)
                     {
+                        DeleteTable();
                         MakeTable();
                     }
                 }
@@ -183,6 +191,14 @@ async function GetParameter()
             
         }
         
+}
+function DeleteTable()
+{
+    var container = document.getElementById("cuong");
+    var countRow = 0;
+    var countColumn = 0;
+    var tagTable = document.createElement("table");
+    container.appendChild(tagTable)
 }
 function MakeTable()
 {
@@ -206,22 +222,59 @@ function MakeTable()
         tagTable.appendChild(tagRow);
         
         for(var j = 0; j < countColumn; j++) {
-        var tagColumn = document.createElement("td");
-          tagColumn.style.width = "fix-content";
-            tagColumn.style.height = "3px";
-            tagColumn.style.fontSize = "16px";
-            tagColumn.style.backgroundColor = 'lightgray';
-            var textNode = document.createTextNode(bang[i][j]);
-            tagColumn.appendChild(textNode);
-            tagRow.appendChild(tagColumn);
-            count = count + 1 ;
-            count_bold = count_bold + 1;
+        // var tagColumn = document.createElement("td");
+        //   tagColumn.style.width = "fix-content";
+        //     tagColumn.style.height = "3px";
+        //     tagColumn.style.fontSize = "16px";
+        //     tagColumn.style.backgroundColor = 'lightgray';
+        //     var textNode = document.createTextNode(bang[i][j]);
+            
+            
+        //     tagColumn.appendChild(textNode);
+            
+        //     tagRow.appendChild(tagColumn);
+        //     count = count + 1 ;
+        //     count_bold = count_bold + 1;
+        //     count_button = count_button + 1;
+            if(count_button === 6)
+            {
+                var tagColumn = document.createElement("td");
+                tagColumn.style.width = "fix-content";
+                tagColumn.style.height = "3px";
+                tagColumn.style.fontSize = "16px";
+                tagColumn.style.backgroundColor = 'lightgray';
+                var textNode = document.createTextNode(btn);
+                tagColumn.appendChild(textNode);
+                tagColumn.innerHTML = btn.outerHTML;
+                tagRow.appendChild(tagColumn);
+                count = count + 1 ;
+                count_bold = count_bold + 1;
+                count_button = count_button + 1;
+            }
+            else {
+                var tagColumn = document.createElement("td");
+                tagColumn.style.width = "fix-content";
+                tagColumn.style.height = "3px";
+                tagColumn.style.fontSize = "16px";
+                tagColumn.style.backgroundColor = 'lightgray';
+                var textNode = document.createTextNode(bang[i][j]);
+                tagColumn.appendChild(textNode);
+                tagRow.appendChild(tagColumn);
+                count = count + 1 ;
+                count_bold = count_bold + 1;
+                count_button = count_button + 1;
+            }
+            if(count_button === 21)
+            {
+                count_button = 0;
+            }
           if(i === 0 )
           {
             tagColumn.style.color = 'white';
             tagColumn.style.backgroundColor = 'black';
             count = 0;
             count_bold = 0;
+            count_button = 0;
           }
           if (count >= 8 && count <= 21 )
           {
@@ -236,7 +289,7 @@ function MakeTable()
           {
             tagColumn.style.fontWeight = 'bold';
           }
-          if(count_bold === 21)
+          else if(count_bold === 21)
             {
                 count_bold = 0;
             }
@@ -274,4 +327,4 @@ function MakeTable()
         
     container.appendChild(tagTable);
 }
-//  setInterval(GetParameter, 10000);
+//  setInterval(GetParameter, 20000);
