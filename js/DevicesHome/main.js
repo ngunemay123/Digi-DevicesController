@@ -9,9 +9,16 @@ var test ;
 var bar = ["ID","Device","Location","Date","Time","Parameter","Details"];
 
 
-var btn = document.createElement('button');
+var btn = document.createElement('a');
 btn.type = 'button';
-   
+btn.href = '../../html/history.html'
+btn.className ="fa-solid fa-circle-info";
+
+//========= btn style =========
+btn.style.border = "none";
+btn.style.fontSize = "20px";
+btn.style.color="black"
+btn.style.textDecoration="none"
 
 
 async function check()
@@ -206,6 +213,8 @@ function MakeTable()
     var countRow = bang.length;
     var countColumn = 7;
     var tagTable = document.createElement("table");
+
+    // countRow.
     
     
     tagTable.style.border = 1;
