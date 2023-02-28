@@ -1,0 +1,1 @@
+const URL = "https://digi27.azurewebsites.net/api/healthies";
