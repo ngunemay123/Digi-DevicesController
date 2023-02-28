@@ -10,7 +10,7 @@ function getDetails(ChiaKhoa) {
 }
 
 function renderHumanDetails(Human) {
-    document.getElementById("txtID").value = Human.ID;
+    document.getElementById("txtID").value = Human.PID;
     document.getElementById("txtName").value = Human.Name;
     document.getElementById("txtHeight").value = Human.Height;
     document.getElementById("txtWeight").value = Human.Weight;
