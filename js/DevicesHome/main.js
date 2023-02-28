@@ -22,7 +22,7 @@ btn.className ="fa-solid fa-circle-info";
 btn.style.border = "none";
 btn.style.fontSize = "20px";
 btn.style.color="black"
-btn.style.textDecoration="none"
+btn.style.textDecoration="none" 
 
 
 async function check()
