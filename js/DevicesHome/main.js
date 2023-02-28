@@ -6,12 +6,16 @@ var count_bold = 0;
 var count = 0;
 var count_button = 0;
 var test ;
-var bar = ["ID","Device","Location","Date","Time","Parameter","Details"];
+var count_button_id_onclick = 0;
+var bar = ["ID","Device","Location","Group Devices","Date","Time","Parameter","Details"];
 
 
-var btn = document.createElement('a');
+var the = [];
+
+
+var btn = document.createElement('button');
 btn.type = 'button';
-btn.href = '../../html/history.html'
+// btn.href = '../../html/history.html'
 btn.className ="fa-solid fa-circle-info";
 
 //========= btn style =========
@@ -24,7 +28,7 @@ btn.style.textDecoration="none"
 async function check()
 {		                        
     email = sessionStorage.getItem('email');
-    await axios.get(URL + "/SearchByEmail/"+email).then((response) =>{
+    await axios.get(URL + "/SearchByEmail/tr6r20@gmail,com").then((response) =>{
         var healthies = response.data;
 
         for(var human of healthies )
@@ -39,7 +43,6 @@ async function check()
             sessionStorage.setItem('Purchase_Date', human.Purchase_Date);
             sessionStorage.setItem('Date', human.Date);
         }
-       
     });
     GetParameter();
     // setTimeout(() => {
@@ -54,6 +57,7 @@ async function GetParameter()
         var healthies = response.data;
         var i =0;
         test = 0;
+        count_button_id_onclick = 0;
         count = 0;
         bang.push(bar);
         for(var human of healthies )
@@ -77,6 +81,7 @@ async function GetParameter()
                     {
                         if(PIDc[j+1] === human.PID )
                         {
+                            // count_button_id_onclick ++;
                             test = test + 1;
                             break;
                         }
@@ -86,6 +91,8 @@ async function GetParameter()
                     //    //đọc trực tiếp       
                             if(PIDc[j+1] === human.PID)
                             {
+                                the.push(human.PID);
+                                count_button_id_onclick ++;
                                 test = test + 1;
                                 // alert(PIDc[j+1] + human.PID + "N");
                                 if(human.Acceleration === "Y")
@@ -191,7 +198,9 @@ async function GetParameter()
                     {
                         DeleteTable();
                         MakeTable();
+                        
                     }
+
                 }
                 
             })
@@ -213,7 +222,7 @@ function MakeTable()
     var countRow = bang.length;
     var countColumn = 7;
     var tagTable = document.createElement("table");
-
+    var count_button_id = 1;
     // countRow.
     
     
@@ -252,6 +261,7 @@ function MakeTable()
                 tagColumn.style.height = "3px";
                 tagColumn.style.fontSize = "16px";
                 tagColumn.style.backgroundColor = 'lightgray';
+                btn.id= count_button_id;
                 var textNode = document.createTextNode(btn);
                 tagColumn.appendChild(textNode);
                 tagColumn.innerHTML = btn.outerHTML;
@@ -259,6 +269,7 @@ function MakeTable()
                 count = count + 1 ;
                 count_bold = count_bold + 1;
                 count_button = count_button + 1;
+                count_button_id = count_button_id + 1;
             }
             else {
                 var tagColumn = document.createElement("td");
@@ -335,5 +346,35 @@ function MakeTable()
     }
         
     container.appendChild(tagTable);
+    AddFunction();
 }
+function AddFunction()
+{
+    
+    // for(var i = 1;i<=count_button_id_onclick;i++)
+    // {
+    //     document.getElementById(i).onclick = function ()
+    //     {
+    //         alert(this.id);
+    //     };
+    // }
+    alert(the);
+    for ( var i = 1; i <= count_button_id_onclick; i++ ) (function(i){ 
+        document.getElementById(i).onclick = function() {
+            localStorage.setItem("key",the[this.id]);
+        }
+      })(i);
+    // var buttons = document.getElementById("1");
+    // for (var i = 0; i <= count_button_id_onclick; i += 1) {
+    // buttons[i].onclick = function(e) {
+    //     alert(this.id);
+    // };
+    // }
+}
+// document.getElementById("1").onclick=function(){displayDate()};
+
+// function displayDate()
+// {
+//     document.getElementById("demo").innerHTML=Date();
+// }
 //  setInterval(GetParameter, 20000);
